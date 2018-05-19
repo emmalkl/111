@@ -6,17 +6,27 @@
 </head>
 <body>
 <script>
-function fun(x) {
-    if (x >= 0) {
-        if (x % 3 == 0 && x % 5 == 0 && x % 7 == 0) {
-            return console.log(x);
+// function fun(x) {
+//     if (x >= 0) {
+//         if (x % 3 == 0 && x % 5 == 0 && x % 7 == 0) {
+//             return console.log(x);
+//         }
+//     }
+// }
+//     for(var i=1;i<=1000;i++){
+//            fun(i);
+//             }
+//}
+var key=0;
+    for(var i=2;i<1000;i++){
+        if (i % 3 == 0 && i % 5 == 0 && i % 7 == 0) {
+            document.write(i+",");
+            key++;
+            if(key%6==0){
+                document.write("<br>");
+            }
         }
     }
-}
-    for(var i=1;i<=1000;i++){
-           fun(i);
-            }
-}
 </script>
 </body>
 </html>
