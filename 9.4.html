@@ -6,17 +6,39 @@
 </head>
 <body>
 <script>
-    var n;
-    for(i=100;i<=1000;i++){
-        fun(i);
-        if()
+    // var n;
+    // for(i=100;i<=1000;i++){
+    //     fun(i);
+    //     if()
+    //         }
+    // function fun(n) {
+    //     for(var i = 2;i<n/2;i++){
+    //         if(n%i == 0){
+    //             return 0;
+    //         }
+    //         return n;
+    //     }
+    // }
+    function isP(val) {
+        if(val>1) {
+            for (var i = 2; i < val; i++) {
+                if (val % i == 0) {
+                    return false;
+                }
             }
-    function fun(n) {
-        for(var i = 2;i<n/2;i++){
-            if(n%i == 0){
-                return 0;
+            return true;
+        }else{
+            return false;
+        }
+    }
+    var key=0;
+    for(var i=100;i<1000;i++){
+        if(isP(i)){
+            document.write(i+",");
+            key++;
+            if(key%6==0){
+                document.write("<br>");
             }
-            return n;
         }
     }
 </script>
