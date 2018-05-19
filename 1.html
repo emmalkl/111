@@ -7,7 +7,8 @@
 <body>
 <script>
     var a=window.prompt("hell","");
-    switch(a)
+    console.log(typeof a);
+    switch(parseInt(a))
     {
         case(a<14): console.log("儿童");break;
         case(a>=14 && a<24): console.log("青少年");break;
@@ -15,7 +16,6 @@
         case(a>=40 && a<60): console.log("中年");break;
         case(a>=60): console.log("老年");break;
     }
-    console.log(a);
 </script>
 </body>
 </html>
