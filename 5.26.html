@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+  <div id="div1" class="div2 div3">hello</div> <!--dom节点-->
+  <div class="divarr">a
+     <span class="spanar">11</span>
+     <span class="spanar">22</span>
+      <div class="divarr">44</div>
+  </div>
+  <div class="divarr">b</div>
+  <div class="divarr">c</div>
+  <div class="divarr">d</div>
+  <div class="divarr">e</div>
+  <span class="spanar">33</span>
+  <script>
+      // var oDiv = document.getElementById("div1");
+      // oDiv.innerHTML="hello world!";
+      // console.log(oDiv.innerHTML);
+
+      // var obj={
+      //     name="123"
+      // }
+      // obj.name="abc";
+      // console.log(obj);
+
+      // var aDiv=document.getElementsByClassName("divarr");  <!--获取全部divarr-->
+      // //console.log(aDiv);
+      // for(var i=0;i<aDiv.length;i++){
+      //     console.log(aDiv[i].innerHTML)
+      // }
+
+      // function getClass(cName) {
+      //      var aHtmlTag=document.getElementsByTagName("*");
+      //      var thisArr=[];
+      //      for(var i=0;i<aHtmlTag.length;i++){
+      //         if(aHtmlTag[i].className==cName){
+      //              // console.log(aHtmlTag[i].innerHTML);
+      //              thisArr.push(aHtmlTag[i]);
+      //          }
+      //      }
+      //      return thisArr;
+      //  }
+      //  // getClass("divarr");
+      //  console.log(getClass("divarr")[0].innerHTML);
+
+
+      // var aDiv=document.getElementsByTagName("div");
+      // console.log(aDiv.classname);
+
+
+     function getClass(cName,obj) {
+         var thisObj="";                           /*obj\\document;  obj?obj:document*/
+         var thisARR=[];
+         if(obj){
+             thisObj=obj;
+         }else{
+             thisObj=document;
+         }
+         var aSpan=thisObj.getElementsByTagName("*");
+         for(var i=0;i<aSpan.length;i++){
+             if(aSpan[i].className==cName){
+                 thisARR.push(aSpan[i]);
+             }
+         }
+         console.log(thisARR);
+     }
+     var oDiv=document.getElementsByClassName("divarr")[0];
+     getClass("divarr",oDiv);
+  </script>
+</body>
+</html>
