@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 0;
+            background-color: black;
+        }
+        .container{
+            position: relative;
+            border: 1px solid #9b9aff;
+            width: 490px;
+            height: 170px;
+            margin: 0 auto;
+        }
+        li{
+            color: aliceblue;
+            list-style: none;
+            float: left;
+            height: 20px;
+            width: 20px;
+            background-color: burlywood;
+            border-radius:50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            margin:0 3px;
+            opacity: 0.5;
+            z-index: 100;
+        }
+        .btn-right .active{
+            opacity: 1;
+            background-color: red;
+            z-index: 100;
+        }
+        .btn-left{
+            position: absolute;
+            left:10px;
+            bottom: 10px;
+            z-index: 100;
+        }
+        .btn-right{
+            position: absolute;
+            right:10px;
+            bottom: 10px;
+            z-index: 100;
+        }
+        .content img {       /*图片重叠*/
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 1;/*层级越高图片在最上面*/
+        }
+        .content .active{
+            z-index:10;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <img src="img/01.jpg" alt="" width="490" height="170" class="active">
+        <img src="img/02.jpg" alt="" width="490" height="170">
+        <img src="img/03.jpg" alt="" width="490" height="170">
+        <img src="img/04.jpg" alt="" width="490" height="170">
+        <img src="img/05.jpg" alt="" width="490" height="170">
+    </div>
+    <div class="btn-left">
+        <ul>
+            <li class="bl-btn">&lt;</li>
+            <li class="bl-btn">&gt;</li>
+        </ul>
+    </div>
+    <div class="btn-right">
+        <ul>
+            <li class="br-btn active">1</li>
+            <li class="br-btn">2</li>
+            <li class="br-btn">3</li>
+            <li class="br-btn">4</li>
+            <li class="br-btn">5</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var aImg=document.getElementsByTagName("img");
+    var aLbtn=document.getElementsByClassName("bl-btn");
+    var aRbtn=document.getElementsByClassName("br-btn");
+    var oContainer=document.getElementsByClassName("container")[0];
+    var nowIndex=0;
+    var timer;
+    play();
+    oContainer.onmouseover=function () {
+        clearInterval(timer);
+    }
+    oContainer.onmouseout=function () {
+        play();
+    }
+
+   aLbtn[0].onclick=function () {
+       --nowIndex;
+       if(nowIndex<0){
+           nowIndex=4;
+       }
+        change(nowIndex);
+   }
+    aLbtn[1].onclick=function () {
+        ++nowIndex;
+        if(nowIndex>4){
+            nowIndex=0;
+        }
+        change(nowIndex);
+    }
+
+    for(var i=0;i<aRbtn.length;i++){
+        aRbtn[i].index=i;
+        aRbtn[i].onmouseover=function () {
+            change(this.index);
+            // for(var j=0;j<aRbtn.length;j++){
+            //     aRbtn[j].className="";
+            //     aImg[j].className="";
+            // }
+            // this.className="br-btn active";
+            // aImg[this.index].className="active";
+        }
+    }
+    function change(index) {
+
+        nowIndex=index;
+        for(var j=0;j<aImg.length;j++){
+            aImg[j].className="";
+            aRbtn[j].className="br-btn";
+        }
+        aImg[index].className="active";
+        aRbtn[index].className="br-btn active";
+    }
+    function play() {
+        timer=setInterval(function () {
+            if(nowIndex>=4){
+                nowIndex=0;
+            }else{
+                nowIndex++;
+            }
+            change(nowIndex)
+        },1000);
+    }
+</script>
+</body>
+</html>
