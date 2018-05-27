@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .container{
+            border:1px solid #000000;
+            width: 450px;
+            margin: 0 auto;/*上下为0，左右自动*/
+        }
+        .top-nav{
+            background-color: black;
+            border-bottom: 1px solid #000000;
+        }
+        .top-nav ul{
+            padding: 0;
+        }
+        .top-nav li{
+            color: aliceblue;
+            float: left;
+            list-style: none;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .top-nav .active{
+            background-color: #333333;
+            color: black;
+        }
+        .content ul{
+            display: none;
+        }
+        .content .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="top-nav">
+        <ul class="nav-ul clearfix">
+            <li class="active">第一章</li>
+            <li>第二章</li>
+            <li>第三章</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul class="active">
+            <li>powerpoint</li>
+            <li>laiguanlin</li>
+            <li>wangyibo</li>
+            <li>yiyangqianxi</li>
+            <li>wuyifan</li>
+        </ul>
+        <ul>
+            <li>haha</li>
+            <li>hello</li>
+            <li>goodbye</li>
+        </ul>
+        <ul>
+            <li>en</li>
+        </ul>
+    </div>
+</div>
+<script>
+   // window.onload=function (ev) {  } div加载结束执行script
+    var aul=document.getElementsByClassName("nav-ul")[0];
+    var ali=aul.getElementsByTagName("li");
+
+    var oCon=document.getElementsByClassName("content")[0];
+    var aCon=oCon.getElementsByTagName("ul");
+
+    for(var i=0;i<ali.length;i++){
+        ali[i].index=i;
+        ali[i].onmouseover=function () {
+            for(var j=0;j<ali.length;j++){
+                ali[j].className="";
+                aCon[j].className="";
+            }
+            this.className="active";
+            aCon[this.index].className="active";
+            console.log(this.index);
+        }
+    }
+</script>
+</body>
+</html>
