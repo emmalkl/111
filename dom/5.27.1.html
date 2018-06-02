@@ -90,7 +90,7 @@
 <script>
     var aImg=document.getElementsByTagName("img");
     var aLbtn=document.getElementsByClassName("bl-btn");
-    //var aRbtn=document.getElementsByClassName("br-btn");
+    var aRbtn=document.getElementsByClassName("br-btn");
     var oContainer=document.getElementsByClassName("container")[0];
     var nowIndex=0;
     var timer;
@@ -132,10 +132,10 @@
         nowIndex=index;
         for(var j=0;j<aImg.length;j++){
             aImg[j].className="";
-            aRbtn[j].className="br";
+            aRbtn[j].className="br-btn";
         }
         aImg[index].className="active";
-        aRbtn[index].className="br active";
+        aRbtn[index].className="br-btn active";
     }
     function play() {
         timer=setInterval(function () {
