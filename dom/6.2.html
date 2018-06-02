@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计时</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            border: 1px solid black;
+            position: relative;
+            width: 250px;
+            height: 250px;
+            line-height: 250px;
+            background-color: darkgray;
+            margin: 0 auto;
+        }
+        button{
+            position: absolute;
+            bottom: 20px;
+            left: 100px;
+        }
+        #txt{
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="text" id="txt">
+    <button>开始计时</button>
+</div>
+<script>
+    var c=100;
+    var t;
+    var obtn=document.getElementsByTagName("button")[0];
+        document.getElementById("txt").value = c;
+
+        obtn.onclick=function play() {
+            if (obtn.innerHTML == "开始计时") {
+                obtn.innerHTML = "停止计时"
+                if (c < 1) {
+                    document.getElementById("txt").value = 0;
+                }
+                t = setInterval(function () {
+                    document.getElementById("txt").value--;
+                }, 1000);
+            } else if (obtn.innerHTML == "停止计时") {
+
+                    // setTimeout(t,0);
+                    obtn.innerHTML = "开始计时";
+                    clearInterval(t);
+
+            }
+        }
+</script>
+</body>
+</html>
