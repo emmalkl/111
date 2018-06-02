@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            width: 200px;
+            height: 200px;
+            background-color: darkgray;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -50px;/*在页面垂直水平居中*/
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>100</h1>
+    <button id="btn" class="btn1">开始</button>
+</div>
+<script>
+    var oBtn=document.getElementById("btn");
+    //var aBtn=document.getElementsByClassName("btn1");
+    var oH1=document.getElementsByTagName("h1")[0];
+    var timer;
+
+    oBtn.onclick=function () {
+        if(oBtn.innerText=="开始"){
+            oBtn.innerText="暂停";
+            timer=setInterval(function () {
+                oH1.innerHTML--;
+            },1000);
+        }else if(oBtn.innerText=="暂停"){
+            oBtn.innerText="开始";
+            clearInterval(timer);
+        }
+    }
+
+
+</script>
+</body>
+</html>
