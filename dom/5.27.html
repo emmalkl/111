@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .a{
+            border:1px solid black;
+            margin: 0 auto;
+            width: 490px;
+            height: 170px;
+            position: relative;
+        }
+        img{
+            display: none;
+        }
+        .contain .active{
+            display: block;
+        }
+        .content .active{
+            display: block;
+        }
+        .contain{
+            position: absolute;
+            bottom: 0;
+            right:10px;
+        }
+        .contain li{
+            list-style: none;
+            float: left;
+            color: #FF00FF;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            width: 20px;
+            background-color:#00ff00;
+            border-radius: 50%;
+            opacity: 0.5;
+            margin:0 3px;
+        // background-color: rgba(0,0,0,.5);   //filter: 0.5;
+        }
+
+    </style>
+</head>
+<body>
+<div class="a">
+  <div class="content">
+      <img src="img/01.jpg" alt="" width="490" height="170" class="active">
+      <img src="img/02.jpg" alt="" width="490" height="170">
+      <img src="img/03.jpg" alt="" width="490" height="170">
+      <img src="img/04.jpg" alt="" width="490" height="170">
+      <img src="img/05.jpg" alt="" width="490" height="170">
+   </div>
+    <div class="contain">
+        <ul class="b">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oCon=document.getElementsByClassName("b")[0];
+    var aCon=oCon.getElementsByTagName("li");
+
+    var oIMG=document.getElementsByTagName("img");
+    // var aIMG=oIMG.getElementsByTagName()
+        for(var i=0;i<aCon.length;i++){
+            aCon[i].index=i;
+        aCon[i].onmouseover=function () {
+            for (var j = 0; j < aCon.length; j++) {
+                aCon[j].className = "";
+                oIMG[j].className = "";
+            }
+            this.className = "active";
+            oIMG[this.index].className = "active";
+            console.log(this.index);
+
+            setInterval(function () {
+                nowImg=oIMG[i+1];
+            },1000);
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
