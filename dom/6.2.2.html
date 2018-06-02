@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    .container{
+        border:1px solid black;
+        width: 450px;
+        height: 420px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .div1 img{
+        display: none;
+        margin: 0 auto;
+
+    }
+    .div1{
+        width: 450px;
+        height: 250px;
+        background-color: darksalmon;
+        margin: 0 auto;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .div2{
+        width: 450px;
+        position: absolute;
+        bottom: 0;
+        left: 0px;
+        border:1px solid black;
+    }
+    .div1 .active{
+        display: block;
+    }
+
+    .div3 {
+        position: absolute;
+        bottom: 0;
+        left: 250px;
+    }
+    li{
+        list-style: none;
+        background-color: lime;
+        color: #FF00FF;
+        height: 20px;
+        line-height: 20px;
+        float: left;
+        width: 20px;
+        text-align: center;
+        border-radius: 50%;
+        opacity: 0.5;
+        margin:0 3px;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="div1">
+        <img src="img/img-2f3eb6e945516db9da4ce0c9d1ab7179.jpg" height="150px" width="100px"  class="active">
+        <img src="img/img-523b2bf487caed2dea4d79c211c26ab8.jpg" height="150px" width="100px">
+        <img src="img/img-1729b7dee652156c599c17f3be57160d.jpg" height="150px" width="100px">
+        <img src="img/IMG_20180514_125047.jpg" height="150px" width="100px">
+        <div class="div3">
+            <ul>
+                <li class="l">&lt;</li>
+                <li class="r">&gt;</li>
+            </ul>
+        </div>
+    </div>
+    <div class="div2">
+        <img src="img/img-2f3eb6e945516db9da4ce0c9d1ab7179.jpg" height="150px" width="100px" class="active">
+        <img src="img/img-523b2bf487caed2dea4d79c211c26ab8.jpg" height="150px" width="100px">
+        <img src="img/img-1729b7dee652156c599c17f3be57160d.jpg" height="150px" width="100px">
+        <img src="img/IMG_20180514_125047.jpg" height="150px" width="100px">
+    </div>
+</div>
+<script>
+    var oImg=document.getElementsByClassName("div2")[0];
+    var aImg=oImg.getElementsByTagName("img");
+    var oI=document.getElementsByClassName("div1")[0];
+    var aI=oI.getElementsByTagName("img");
+    var Lbtn=document.getElementsByClassName("l")[0];
+    var Rbtn=document.getElementsByClassName("r")[0];
+    var nowindex=0;
+    for(var i=0;i<aImg.length;i++){
+        aImg[i].index = i;
+        aImg[i].onmouseover=function () {
+            for(var j=0;j<aImg.length;j++){
+                aImg[j].className="";
+                aI[j].className="";
+            }
+            this.className="active";
+            aI[this.index].className="active";
+            console.log(this.index);
+            nowindex=this.index;
+        }
+
+    }
+    Lbtn.onclick=function () {
+        --nowindex;
+        if(nowindex<0){
+            nowindex=3;
+        }
+        for(var i=0;i<aI.length;i++){
+            aI[i].className="";
+        }
+        aI[nowindex].className="active";
+    }
+    Rbtn.onclick=function () {
+        ++nowindex;
+        if(nowindex>3){
+            nowindex=0;
+        }
+        for(var i=0;i<aI.length;i++){
+            aI[i].className="";
+        }
+        aI[nowindex].className="active";
+    }
+</script>
+</body>
+</html>
