@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: aqua;
+            width: 400px;
+            height: 60px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    var aDiv=document.getElementsByTagName("div");
+    var timer1,timer2;
+    //var timer=[]
+    //宽度增加
+    for(var i=0;i<aDiv.length;i++){
+        //aDiv[i].index=i;
+        //clearInterval(timer[this.index]);
+        aDiv[i].onmouseover = function () {
+            clearInterval(this.timer2);
+            var that=this;   /*内部函数可以访问外部*/
+            this.timer1=setInterval(function () {
+                if(that.offsetWidth>600){
+                    //clearInterval(timer[that.index]);
+                    clearInterval(that.timer1);
+                }else{
+                    that.style.width=that.offsetWidth+10+"px";
+                }
+            },50)
+
+        }
+    }
+    for(var j=0;j<aDiv.length;j++){
+
+        aDiv[j].onmouseout=function () {
+            clearInterval(this.timer1);
+            var that=this;
+            this.timer2=setInterval(function () {
+                if(that.offsetWidth<300){
+                    clearInterval(that.timer2);
+                }else{
+                    that.style.width=that.offsetWidth-10+"px";
+                }
+                },50)
+        }
+    }
+</script>
+</body>
+</html>
