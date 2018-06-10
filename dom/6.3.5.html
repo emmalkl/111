@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        .container{
+            position: relative;
+            border:1px solid red;
+            margin:0 auto;
+            height: 170px;
+            width: 490px;
+            overflow: hidden;
+        }
+        .content ul{
+            list-style: none;
+            width: 2500px;
+            position: absolute;
+        }
+        .content ul li{
+            float: left;
+        }
+        .ul1 li{
+            color: #FF00FF;
+            background-color: lime;
+            height: 20px;
+            line-height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            float:left;
+            list-style: none;
+            opacity: 0.5;
+            text-align: center;
+            margin: 0 3px;
+        }
+        .b{
+            position: absolute;
+            left:10px;
+            bottom: 10px;
+        }
+        .a{
+            position: absolute;
+            right:10px;
+            bottom: 10px;
+        }
+        .a .active{
+            background-color: #9b9aff;
+        }
+        .b .active{
+            background-color: #9b9aff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <ul class="c">
+            <li><img src="img/01.jpg" class="active"></li>
+            <li><img src="img/02.jpg"></li>
+            <li><img src="img/03.jpg"></li>
+            <li><img src="img/04.jpg"></li>
+            <li><img src="img/05.jpg"></li>
+        </ul>
+    </div>
+    <div class="btn">
+        <ul class="ul1 b">
+            <li class="active d">&lt;</li>
+            <li class="d">&gt;</li>
+        </ul>
+    </div>
+    <div>
+        <ul class="ul1 a">
+            <li class="active e">1</li>
+            <li class="e">2</li>
+            <li class="e">3</li>
+            <li class="e">4</li>
+            <li class="e">5</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oImg=document.getElementsByClassName("c")[0];
+    var aImg=document.getElementsByTagName("img");
+    var obl=document.getElementsByClassName("d");
+    var obr=document.getElementsByClassName("e");
+    var timer,timer1;
+    var nowindex=0;
+    var isRun = true;
+    var isTimer=true;
+    foo();
+    oImg.onmouseover=function () {
+        isTimer=false;
+    }
+     oImg.onmouseout=function () {
+         isTimer=true;
+     }
+
+    //向左移动
+    obl[0].onclick=function () {
+        if(isRun){
+            play(nowindex-1);
+        }
+    }
+    //向右移动
+    obl[1].onclick=function () {
+        if(isRun){
+            play(nowindex+1);
+        }
+    }
+
+
+    for(var i=0;i<aImg.length;i++) {
+        obr[i].index = i;
+        obr[i].onmouseover = function () {
+            if(isRun){
+                play(this.index);
+            }
+        }
+    }
+
+    function play(index) {
+        isRun=false;
+        var direction;
+        //var l;
+        if(nowindex == index){
+            direction = 0;
+        }else if(nowindex<index){
+            direction=-1;
+        }else{
+            direction=1;
+        }
+
+        //判断边界
+        if(index==-1){
+            index=4;
+            direction=-1
+        }else if(index==5){
+            index=0;
+            direction=1;
+        }
+
+        nowindex = index;/*每判断一次改变nowindex的值*/
+        console.log(direction);
+        timer=setInterval(function () {
+            oImg.style.left=oImg.offsetLeft+direction*10+"px";
+            if(oImg.offsetLeft==-index*490){
+                clearInterval(timer);
+                isRun = true;
+            }
+        },50)
+        for(var j=0;j<aImg.length;j++){
+            obr[j].className="e";
+        }
+        obr[nowindex].className="active e";
+
+        // for(var i=0;i<obl.length;i++){
+        //     obl[i].className="d";
+        // }
+        // obl[nowindex].className="active d";
+    }
+    function foo() {
+        setInterval(function () {
+            if(isRun){
+                play(nowindex+1);
+            }
+        },1000)
+    }
+
+    // setInterval(function () {
+    //     for(){}
+    //         if() {
+    //             play(nowindex+1);
+    //             nowindex=1;
+    //         }else{
+    //             nowindex=0;
+    //             play(nowindex);
+    //         }
+    // },1000)
+
+</script>
+</body>
+</html>
