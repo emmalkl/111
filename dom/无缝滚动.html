@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            border:1px solid black;
+            margin: 0 auto;
+            height: 170px;
+            width: 490px;
+            position: relative;
+            overflow: hidden;
+        }
+        .content{
+            height: 170px;
+            width: 5000px;
+            position:absolute;
+        }
+        .content li{
+            float: left;
+            list-style: none;
+        }
+        .btn-l li{
+            float: left;
+            list-style: none;
+            text-align: center;
+            font-size: 20px;
+            opacity: 0.5;
+            margin: 0 3px;
+            color: #FF00FF;
+            background-color: lime;
+            height: 20px;
+            line-height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+        .btn-l{
+            position: absolute;
+            bottom: 10px;
+            left:10px;
+        }
+        .btn-r li{
+            float: left;
+            list-style: none;
+            text-align: center;
+            font-size: 20px;
+            opacity: 0.5;
+            margin: 0 3px;
+            color: #FF00FF;
+            background-color: lime;
+            height: 20px;
+            line-height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+        .btn-r{
+            position: absolute;
+            bottom: 10px;
+            right:10px;
+        }
+        .btn .active{
+            background-color: blue;
+        }   
+        .l .active{
+            background-color: blue;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="content">
+                    <ul class="ul">
+                        <li><img src="img/01.jpg" class="active"></li>
+                        <li><img src="img/02.jpg"></li>
+                        <li><img src="img/03.jpg"></li>
+                        <li><img src="img/04.jpg"></li>
+                        <li><img src="img/05.jpg"></li>
+                        <li><img src="img/01.jpg"></li>
+                    </ul>
+                </div>
+                <div class="btn-l">
+                    <ul class="btn">
+                        <li class="active">&lt;</li>
+                        <li>&gt;</li>
+                    </ul>
+                </div>
+                <div class="btn-r">
+                    <ul class="l">
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </div>
+    </div>
+    <script>
+        oContent=document.getElementsByClassName("content")[0];
+        oUl=document.getElementsByClassName("ul");
+        obtnl=document.getElementsByClassName("btn")[0].getElementsByTagName("li");
+        obtnr=document.getElementsByClassName("l");
+        //var step=-7;
+        var timer;
+        var nowindex=0;
+        var step;
+        var isrun=true;
+        var istimer=true;
+
+        //play(7)
+        function play(step){
+            timer=setInterval(function (){
+             oContent.style.left=oContent.offsetLeft-step+"px";
+             if (oContent.offsetLeft <= -4 * 490) {
+                oContent.style.left = 0;
+            } else if (oContent.offsetLeft >0) {
+                oContent.style.left = -4 * 490+"px";
+            }
+            },70)
+        }
+          
+
+        obtnl[0].onclick=function (){
+           clearInterval(timer);
+           
+           if(oContent.offsetLeft=-index*490){
+            play(7);
+
+           }
+        }
+        obtnl[1].onclick=function (){
+           //clearInterval(timer);
+           play(-7);
+        }
+
+     
+      nowindex=index;
+        
+        for(var i=0;i<obtnr.length;i++){
+             obtnr[i].index=i;
+             obtnr[i].onmouseover=function(){
+                 obtnr[i].classname="";
+                 oUl[i].classname="";
+             }
+             this.classname="active";
+             oUl[this.index]="active";
+             
+        }
+    </script>
+</body>
+</html>

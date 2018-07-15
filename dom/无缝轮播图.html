@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        .container{
+            position: relative;
+            border:1px solid red;
+            margin:0 auto;
+            height: 170px;
+            width: 490px;
+            overflow: hidden;
+        }
+        .content ul{
+            list-style: none;
+            width: 2500px;
+            position: absolute;
+        }
+        .content ul li{
+            float: left;
+        }
+        .ul1 li{
+            color: #FF00FF;
+            background-color: lime;
+            height: 20px;
+            line-height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            float:left;
+            list-style: none;
+            opacity: 0.5;
+            text-align: center;
+            margin: 0 3px;
+        }
+        .b{
+            position: absolute;
+            left:10px;
+            bottom: 10px;
+        }
+        .a{
+            position: absolute;
+            right:10px;
+            bottom: 10px;
+        }
+        .a .active{
+            background-color: #9b9aff;
+        }
+        .b .active{
+            background-color: #9b9aff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <ul class="c clearfix">
+            <li><img src="img/01.jpg" class="active"></li>
+            <li><img src="img/02.jpg"></li>
+            <li><img src="img/03.jpg"></li>
+            <li><img src="img/04.jpg"></li>
+            <li><img src="img/05.jpg"></li>
+            <li><img src="img/01.jpg"></li>
+        </ul>
+    </div>
+    <div class="btn">
+        <ul class="ul1 b">
+            <li class="active d">&lt;</li>
+            <li class="d">&gt;</li>
+        </ul>
+    </div>
+    <div>
+        <ul class="ul1 a">
+            <li class="active e">1</li>
+            <li class="e">2</li>
+            <li class="e">3</li>
+            <li class="e">4</li>
+            <li class="e">5</li>
+        </ul>
+    </div>
+</div>
+<script>
+    // var aImg1=document.getElementsByClassName("clearfix")[0];
+    //var aImg=aImg1.getElementsByTagName("li");
+    var aImg=document.querySelection(".clearfix");
+    
+    setInterval(function(){
+      aImg.style.left=aImg.offsetLeft-10+"px";
+
+    },16)
+</script>
+    
+</body>
+</html>
