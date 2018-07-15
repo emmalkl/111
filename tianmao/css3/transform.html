@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 0 1px #000;
+        }
+        .rotate{
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            transform: rotate(45deg);
+            margin: 0 auto;
+        }
+        .box2{
+            /* width: 50px;
+            height: 50px;
+            background-color: blue;*/
+            transform-origin: 50% 25%;/*依据某点（50%，25%）旋转*/
+            transition: transform 1s ease-in; /*挪上去1s转完*/
+            /* transition: width 2s ease; */
+            width: 0;
+            height: 0;
+            font-size: 0;
+            border-width: 30px;
+            border-style: solid;
+            border-color: red transparent transparent transparent;
+        }
+        .box2:hover{
+            transform: rotate(180deg);
+            /* width: 400px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+      <div class="rotate"></div>
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+</html>

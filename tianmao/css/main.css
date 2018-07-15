@@ -1,0 +1,497 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*消除a标签的特有形式*/
+a{
+    text-decoration: none;
+}
+.tb{
+    color:#999999;
+}
+/*所有li样式*/
+.flay li{
+    text-align: center;
+    font-size: 12px;
+    color:#999999;
+    list-style: none;
+    float:left;
+    margin: 0 10px;           
+}
+/*左边表单*/
+.top-left{
+    height: 32px;
+    line-height: 32px;
+    position:absolute;
+    left: 50px;
+}
+/*右边表单*/
+.top-right{
+    height: 32px;
+    line-height: 32px;
+    position:absolute;
+    right: 84px;
+}
+/*整个文字*/
+.top-both{
+    width: 1360px;
+    margin: 0 auto;
+    position: relative;
+    /* text-align: center; */
+}
+/*最上面一栏样式 定位*/
+.top{
+    height: 33px;
+    background-color:#f2f2f2;
+}
+/*单独改变最上一栏的li*/
+.top .top-s li{
+    margin: 0;
+    padding: 0 10px;
+}
+/*小图标样式*/
+.top-right .menu{
+    color: red;
+    font-size: 12px;
+}
+/*有小三角的加padding*/
+.top .top-right .tr{
+    position: relative;
+    padding: 0 20px;
+}
+/*小三角*/
+.top-right .s{
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #999999 transparent transparent transparent;
+    position: absolute;
+    right:8px;
+    top: 16px;
+    transition: none;/*没挪上去不转停止*/
+    transform-origin: 50% 25%;
+}
+/*小三角旋转180°且转的快*/
+.top .top-s li:hover .s{
+    transition: transform 0.3s ease-in;
+    transform: rotate(180deg);
+}
+/*小三角定位*/
+.t-dw{
+    position: relative;
+}
+/*右边三个特别的选项选中后样式*/
+.top .top-s .spe:hover{
+    background-color: white;
+    border-bottom: 1px solid #fff;
+}
+/*三个特殊选项下方选中之后的样式*/
+.spe a:hover{
+    text-decoration: underline;
+    color: #f00;
+}
+/*.t类直系a选择后的样式，对.t选中。改变所有！选中a直系.t的样式*/
+.top .top-s .t:hover>a{
+    cursor: pointer;
+    color: #f00;
+}
+/*手机下方选中显示*/
+.top .top-s li:hover .phone{
+    display: block;
+}
+/*我的淘宝、收藏夹选中下方显示*/
+.top .top-s li:hover .tr-nav{
+    display: block
+}
+/*商家支持选中下方显示*/
+.top .top-s li:hover .tr-sj{
+    display: block;
+}
+/*收藏夹、我的淘宝下方样式*/
+.tr-nav{
+    border: 1px solid #f5f5f5;
+    border-top: white;
+    position: absolute;
+    left:0;
+    top:32px;
+    width: 110px;
+    background-color: #fff;
+    z-index: 2;
+    display: none;
+}
+/*商家支持下方样式*/
+.tr-sj{
+    border: 1px solid #f5f5f5;
+    border-top: white;
+    position: absolute;
+    right:0;
+    top:32px;
+    background-color: #fff;
+    z-index: 2;
+    width: 142px;
+    height: 168px;
+    display: none;
+}
+.tr-sj .tr-s a{
+    padding: 0 5px;
+}
+.top .tr-sj .line{
+    padding: 0;
+    margin: 0;
+    width: 129px;
+    border-bottom: 1px dotted #827777;
+}
+.tr-sj .tr-l a{
+    padding: 0 5px;
+}
+.tr .tr-sj h3{
+    font-size: 12px;
+    height: 23px;
+    float: none;
+    margin-left: 9px;
+}
+.tr .tr-sj .tr-s{
+   height: 84px;
+   line-height: 20px;
+   margin-left:8px;
+}
+.tr .tr-sj .tr-l{
+    height: 30px;
+    line-height: 20px;
+    margin-left:8px;
+ }
+/*手机版下方样式*/
+.phone{
+    border: 1px solid #f5f5f5;
+    position: absolute;
+    top:32px;
+    left: 218px;
+    z-index: 2;
+    background-color: #fff;
+    border-top-color:#fff;
+    box-shadow: 0 0 1px #f5f5f5;
+    display: none;
+}
+.phone img{
+    z-index: 2;
+}
+.p-rotate{
+    width: 20px;
+    height: 10px;
+    margin: 0 auto;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+/*清除浮动*/
+.clearfix::after{
+    content: "";
+    clear:both;
+    display: block;
+}
+
+
+.center{
+    height: 130px;
+    position: relative;
+}
+.center img{
+    position:absolute;
+    left:50px;
+}
+.c-border{
+    border:2px solid red;
+    margin: 0 auto;
+    width: 625px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    left:370px;
+    top:40px;
+}
+.c-border .button{
+    background-color:red; 
+    color: aliceblue;
+    font-size: 25px;
+    height: 40px;
+    width: 132px;
+    position: absolute;
+    right:0;
+    margin: 0;
+}
+.c-type{
+    position: absolute;
+    left:370px;
+    top:88px;
+}
+.c-type li{
+    margin: 0 5px;
+}
+/*标栏*/
+.c-form{
+    height: 33px;
+}
+.c-form li{
+    color: black;
+    font-size: 20px;
+}
+.c-form .flay{
+    margin-left: 50px;
+}
+.c-form .select{
+    line-height: 33px;
+}
+.form-type{
+    background-color: red;
+    height: 33px;
+    line-height: 33px;
+    width: 200px;
+}
+
+.lunbo{
+    height: 500px;
+    border-top:2px solid red;
+    position: relative;
+}
+.lunbo .lunbo-type{
+    width: 200px;
+    height: 500px;
+    position: absolute;
+    left: 60px;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+.lunbo .lu-left{
+    width: 1360px;
+    margin: 0 auto;
+    position: relative;
+}
+.lunbo .lunbo-type li{
+    height: 31.19px;
+    text-align: center;
+    font-size: 17px;
+    color:white;
+    list-style: none;
+}
+.lunbo .img-index{
+    margin: 0 auto;
+    height: 20px;
+    width: 250px;
+    position: absolute;
+    left:50%;
+    bottom: -470px;
+    margin-left: -125px;
+    position: relative;
+    z-index: 10;
+}
+.lunbo .img-index li{
+    border:1px solid white;
+    width: 30px;
+    height: 5px;
+    list-style: none;
+    float:left;
+    text-align: center;
+    background-color: white;
+    margin: 0 2px;
+}
+.lunbo .img li{
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: all 1s ease;
+    opacity: 0;
+}
+.lunbo .img  .active{
+    z-index: 2;
+    opacity: 1;
+  }
+.lunbo .img li img{
+    list-style: none;
+    margin-left: -8px;
+}
+.lunbo .img .img-color-one{
+    background-color: #e8e8e8;
+}
+.lunbo .img .img-color-two{
+    background-color: #dfdfe1;
+}
+.lunbo .img .img-color-three{
+    background-color: #922b5b;
+}
+.lunbo .img .img-color-four{
+    background-color:#e8e8e8;
+}
+.lunbo .img .img-color-five{
+    background-color:#922b5b;
+}
+.lunbo .img .img-color-six{
+    background-color:#2282fc;
+}
+
+.brand{
+    height: 400px;
+    background-color: #f5f5f5;
+}
+.brand li{
+    list-style: none;
+}
+.brand .buf{
+    float:left;
+    height: 370px;
+    margin: 20px 5px;
+}
+.brand .bra{
+    margin-left: 50px;
+}
+.brand-style{
+    width:490px;
+    height: 55px;
+    background-color: white;
+    font-size: 18px;
+    line-height: 55px;
+}
+.brand-style1{
+    width:234px;
+    height: 55px;
+    background-color: white;
+    font-size: 18px;
+    line-height: 55px;
+}
+
+.container{
+    height: 367px;
+    background-color: #f5f5f5
+}
+.container img{
+    height: 50px;
+    width: 82%;
+}
+.container li{
+    list-style: none;
+    border: 0.5px solid #f5f5f5;
+    width: 122px;
+    height: 108px;
+    line-height: 150px;
+    text-align: center;
+    margin: 0 1px;
+    float: left;
+    background-color: white;
+}
+.content{
+    height: 108px;
+    width: 1260px;
+    margin: 0 auto;
+}
+/*天猫超市*/
+.floor{
+    height: 700px;
+    background-color: #f5f5f5;
+    position: relative;
+}
+.supermarket .flay{
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    right:45px;
+    top:0;
+}
+.supermarket img{
+    margin: 0 0 0 50px;
+}
+.floor-gws{
+    margin: 10px 0 20px 50px;
+}
+.floor-s{
+    width: 484px;
+    height: 303px;
+    margin: 0;
+    background-color: white;
+    position: absolute;
+    left: 297px;
+    top:39px;
+}
+.floor-sle .f-s{
+    margin: 10px 0 0 10px;
+    height: 57px;
+    width: 470px;
+}
+.floor-sle .f-s li{
+    list-style: none;
+    float:left;
+    font-size: 20px;
+    text-align: center;
+    color:black;
+    width: 231px;
+    height: 57px;
+    line-height: 57px;
+    background-color: #f5f5f5;
+}
+.floor-sle .f-s .active{
+    background-color: rgb(86, 212, 86);
+}
+.floor-s .f-i img{
+    position: absolute;
+    right: 46px;
+    top:88px;
+}
+.floor-img .f-i{
+    border: 2px solid #f5f5f5;
+    height: 225px;
+    width: 458px;
+    margin: 0 10px;
+}
+.floor .f-two{
+    height: 302px;
+    width: 540px;
+    position: absolute;
+    right:23px;
+    top:39px;
+}
+.floor .f-two .Ri{
+    background-color: white;
+    height: 302px;
+    width: 236px;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.floor .f-two li img{
+    margin: 20px 10px;
+}
+.infor-one{
+    width: 176px;
+    height: 80px;
+    margin: 0 auto;
+}
+.infor-one li{
+    text-align: center;
+    color: black; 
+    line-height: 26px;
+}
+.infor-one .imp{
+    color: red;
+    font-size: 20px;
+}
+.f-four{
+    height: 302px;
+    width: 1080px;
+    position: absolute;
+    right:-25px;
+    top:355px;
+}
+.floor .f-four .Ri{
+    background-color: white;
+    height: 302px;
+    width: 236px;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.floor .f-four li img{
+    margin: 20px 10px;
+}
+.tmall{
+    height: 618px;
+    background-color: #f5f5f5;
+    position: relative;
+}
