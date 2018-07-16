@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      div{
+          width: 50%;
+          padding-bottom: 50%;/*依据父级的一半*/
+          height: 0;/*padding-bottom会将区域内的文字或内容撑开，所以高度要设0*/
+      }
+      #box1{
+          background: red;
+      }
+      #box2{
+          background: blue;
+      }
+      #box3{
+          background: yellow;
+      }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+    <script>
+        /*js事件机制*/
+       var oBox1=document.getElementById("box1");
+       var oBox2=document.getElementById("box2");
+       var oBox3=document.getElementById("box3");
+    // oBox1.onclick=function(){
+    //     console.log("box1");
+    // }
+    // oBox1.onclick=function(){
+    //     console.log("box1-1");
+    // }/*第二个会把第一个覆盖掉*/
+
+
+    oBox1.addEventListener("click",function(){
+        console.log("box1");
+    },false)/*冒泡从里往外；true捕获从外往里；同时存在时先捕获再冒泡*/
+    oBox1.addEventListener("click",function(){
+        console.log("box1-1");
+    },false)/*可重复绑定事件*/
+
+    oBox3.addEventListener("click",function(e){
+        console.log("box3");
+        e.stopPropagation();/*冒泡阻止 正常：3.2.1；阻止后：3*/
+    },false)
+
+
+    /*ie支持,存在冒泡也可以阻止，但没有捕获*/
+    oBox1.attachEvent("onclick",function(){
+        console.log("box1");
+    })
+    /*阻止*/
+    oBox3.attachEvent("onclick",function(){
+        console.log("box3");
+        window.event.cancelBubble=true;
+    })
+    /*end*/
+
+    // function testa(){
+    //     console.log("123");
+    // }
+    // oBox1.addEventListener("click",testa,flase);/*testa后不能加（）会直接输出*/
+    //oBox1.removeEventListener("click",testa,flase);/*阻止*/
+
+    /*重点*/
+    // oBox1.addEventListener("click",function testa(){
+    //       console.log("123");
+    //  },flase);
+    // oBox1.removeEventListener("click",function testa(){
+    //       console.log("123");
+    //  },flase);/*function..为理论数据类型，传过去是是地址，而remove要求两个必须一样，所以错误，故要写具名函数*/
+    </script>
+</body>
+</html>
