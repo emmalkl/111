@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      .div1{
+          width: 200px;
+          height: 15px;
+          border:1px solid #000;
+          border-radius: 10px;
+      }
+      .active{
+          background: #6caf00;
+          height: 15px;
+          width: 0;
+          border-radius: 10px;
+      }
+      span{
+          text-align: center;
+          line-height: 15px;
+      }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div active">
+                <span>0</span>%
+        </div>
+        
+    </div>
+    <button>开始</button>
+    <script>
+      var aBtn=document.getElementsByTagName("button")[0];
+      var aDiv=document.getElementsByClassName("div")[0];
+      var aSp=document.getElementsByTagName("span")[0];
+      var timer;
+      aBtn.onclick=function(){
+        // aDiv.offsetWidth=0;
+        timer=setInterval(function(){
+         aDiv.style.width=aDiv.offsetWidth+2+"px";
+         aSp.innerHTML++;
+         if(aDiv.offsetWidth==200){
+            clearInterval(timer);
+        }
+        },50);
+        
+      }
+    </script>
+</body>
+</html>
