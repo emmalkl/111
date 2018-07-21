@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      .container{
+          border:1px solid #000;
+          height: 250px; 
+          width: 470px;
+          margin: 0 auto;
+        position: relative;
+    }
+      img{
+          height: 250px;
+          width: 470px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          opacity: 1;
+        }
+      li{
+          list-style: none;
+          transition: all 1s ease;
+        }
+      .active{
+          z-index: 2;
+          opacity: 2;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><img src="../image/00.jpg" class="active" alt=""></li>
+            <li><img src="../image/01.jpg" alt=""></li>
+            <li><img src="../image/lkl.jpg" alt=""></li>
+            <li><img src="../image/timg.jpg" alt=""></li>
+        </ul>
+    </div>
+    
+    <script src="../jquery-3.3.1.js"></script>
+    <script>
+    //    var aimg=$("<img src='' alt=''>");
+    var index=0;
+    var aimg=$("img");
+       setInterval(function(){
+           aimg.removeClass("active")
+           $(aimg[++index]).addClass("active");
+           
+           if(index==3){
+               index=-1;
+           } 
+           
+       },1000)
+    </script>
+</body>
+</html>
