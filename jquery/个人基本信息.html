@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .te{
+            border: 1px solid #000;
+            display: none;
+        }
+       .te li{
+           list-style: none;
+       }
+       .active{
+           background: pink;
+       }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>个人基本信息</legend>
+            <div>
+                名称：
+                <input type="text" value="姓名">
+                <ul class="te">
+                    <li>hdsahdnbciahsgdk</li>
+                    <li>sdabcakjshdgi</li>
+                    <li>sdhgdhasi</li>
+                    <li>shdakhcknja</li>
+                    <li>jashdakjd</li>
+                </ul>
+            </div>
+            <div>
+                密码：
+                <input type="password" value="123">
+            </div>
+            <div>
+                详细信息：
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+        </fieldset>
+    </form>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(":input").on("focus",function(){
+            this.value="";
+            $(this).addClass("active");
+        })
+        $(":input").on("blur",function(){
+            // $("input").css("background","pink");
+            $(this).removeClass("active").val(this.value == ""?this.defaultValue:this.value);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     td{
+         width: 100px;
+     }
+     .color{
+         background: papayawhip
+     }
+     .active{
+         display: none;
+     }
+     .selected{ background:#FF6500;color:#fff;}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>暂住地</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="color" id="sel1">前台设计组
+            </td>
+        </tr>
+            <tr  class="1">
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>浙江宁波</td>
+                </tr>
+                <tr  class="1">
+                        <td>李四</td>
+                        <td>女</td>
+                        <td>浙江杭州</td>
+                    </tr>
+        
+        
+            <tr>
+                    <td colspan="3" class="color" id="sel2">前台开发组</td> </tr>
+                    <tr class="2">
+                            <td>王五</td>
+                            <td>男</td>
+                            <td>湖南长沙</td>
+                        </tr>
+                        <tr class="2">
+                                <td>找刘</td>
+                                <td>男</td>
+                                <td>浙江温州</td>
+                            </tr>
+               
+                
+                        <tr>
+                                <td colspan="3" class="color" id="sel3">后台开发组</td>
+                                
+                            </tr>
+                            <tr  class="3">
+                                    <td>rain</td>
+                                    <td>男</td>
+                                    <td>浙江杭州</td>
+                                </tr>
+                                <tr  class="3">
+                                        <td>max</td>
+                                        <td>女</td>
+                                        <td>浙江杭州</td>
+                                    </tr>
+    </table>
+    <script src="jquery-3.3.1.js"></script>
+
+<script>
+    $("#sel1").on("click",function(){
+        $("#sel1").toggleClass("selected");
+       $(".1").toggleClass("active");
+    })
+    $("#sel2").on("click",function(){
+        $("#sel2").toggleClass("selected");
+       $(".2").toggleClass("active");
+    })
+    $("#sel3").on("click",function(){
+        $("#sel3").toggleClass("selected");
+       $(".3").toggleClass("active");
+    })
+
+</script>
+</body>
+</html>
