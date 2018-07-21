@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      table {border-collapse:collapse;}
+      td {border:1px solid #000;width: 200px;text-align: center;}
+      .tr-1 {background: cadetblue;}
+      /* .odd {background: pink;} */
+      .active{display: none;}
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr><td colspan="2">鼠标点击表格就可以编辑</td></tr>
+        </thead>
+        <tbody>
+            <tr class="tr-1">
+                <td>学号</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <!-- <td><input type="text" value="张三" style="border: none"></td> -->
+                <td class="td"><span>张三</span></td>
+            </tr>
+            <tr class="odd">
+                <td>2</td>
+                <!-- <td><input type="text" value="李四" style="border: none"></td> -->
+                <td class="td"><span>李四</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <!-- <td><input type="text" value="王五" style="border: none"></td> -->
+                <td class="td"><span>王五</span></td>
+            </tr>
+            <tr class="odd">
+                <td>4</td>
+                <!-- <td><input type="text" value="找刘" style="border: none"></td> -->
+                <td class="td"><span>赵六</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        // $("input").on("focus",function(){
+        //     this.value="";
+        // })
+        // $("input").on("blur",function(){
+        //     $(this).val(this.value==""?this.defaultValue:this.value);
+        // })
+        
+        $(".td").on("click",function(){
+            //if($(this).children("input").length==0){
+            var inp=$("<input type='text'/>")
+            inp.val(this.innerText);
+            $(this).empty();
+            $(this).append(inp);
+            inp.focus();
+           // }
+        })
+        
+        $(".td").on("blur","input",function(){
+            var father=$(this).parent("td");
+            father.text($(this).val());
+            $(this).remove();
+        })
+    </script>
+</body>
+</html>

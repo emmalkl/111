@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {border-collapse:collapse;}
+        td {border:1px solid #000;width: 200px;text-align: center;}
+        .tr-1 {background: cadetblue;}
+      </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr><td colspan="2">鼠标点击表格就可以编辑</td></tr>
+        </thead>
+        <tbody>
+            <tr class="tr-1">
+                <td>学号</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>1</td>
+               
+                <td class="td">张三</td>
+            </tr>
+            <tr class="odd">
+                <td>2</td>
+                
+                <td class="td">李四</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                
+                <td class="td">王五</td>
+            </tr>
+            <tr class="odd">
+                <td>4</td>
+                
+                <td class="td">赵六</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+     $(".td").on("click",function(){
+         if($(this).children("input").length==0){
+         var inpObj=$("<input type='text'/>");
+         inpObj.val(this.innerText);
+         $(this).empty();
+         $(this).append(inpObj);
+         inpObj.focus();
+         }
+     })
+     /*事件委托，input为动态添加的所以无法绑定事件*/
+     $(".td").on("blur","input",function(){
+         var father=$(this).parent("td");
+         father.text($(this).val());
+         $(this).remove();
+     })
+
+    //  $(".td").on("focusout",function(){
+    //      var child=$(this).children("input");
+    //         $(this).text(child.val());
+    //  })
+     $(".td").on("keyup","input",function(e){
+         if(e.which==13){
+         $(this).trigger("blur");
+         }
+     })
+    </script>
+</body>
+</html>
