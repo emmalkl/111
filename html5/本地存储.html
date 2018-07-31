@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var timer = new Date();
+        // timer.setDate( timer.getDate() -1)
+        // document.cookie = "school=linda;expires="+timer.toUTCString();  
+        // console.log(document.cookie);
+                
+    function setCookie(key,value,num){
+        console.log(key,value);
+        
+      var timer = new Date();
+      timer.setDate( timer.getDate() +num)
+      document.cookie = key+"="+value+";expires="+timer.toUTCString();  
+    }
+            
+    function getCookie(key){
+        var cookieStr = document.cookie;
+        var thisArr = cookieStr.split(";");
+        for(var i=0;i<thisArr.length;i++){
+        if(thisArr[i].split("=")[0].trim()==key){
+          return thisArr[i].split("=")[1].trim()
+        }
+      }  
+    }
+            
+    function delCookie(key){
+        var timer = new Date();
+      timer.setDate( timer.getDate() -1)
+      document.cookie = key+"=a;expires="+timer.toUTCString();  
+    }
+            
+    var str = "a=b=c"
+    console.log(str.split("="));
+                
+    setCookie("school","linda",1)       
+    delCookie("key")
+    console.log(getCookie("school"))
+                
+    </script>
+</body>
+</html>
