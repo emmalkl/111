@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox=document.getElementById("box")
+     var a='1';
+     var b="2";
+    //  var str=s+"+"+b+"="+(parseInt(a)+parseInt(b));
+    // var str=`$(a)+$(b)
+    // =$(a+b)`;
+    //  console.log(str);
+
+    
+    // var str1="<h1 class='abc'>hello</h1>";
+    // var str2=`<h1 class='abc'>hello</h1>`
+    // oBox.innerHTML=str1
+
+    // var str="hello world hello"
+    // console.log(str.indexOf("llo"));//includes
+
+    // let str="hello world"
+    // console.log(str.startsWith("hello"));//true//endswith
+    
+    // let str="hello"
+    // console.log(str.padStart(10,"xy"));//padend;repeat
+
+
+   var str1="hello world";
+   var str2="world";
+   string.prototype.sw=function(str2){
+       if(str1.indexOf(str2)==0){
+           return true;
+       }else{
+           return false;
+       }
+   }
+   string.prototype.sw=function(str2){
+       if(this.indexOf(str2)==this.length-str2.length){
+           return true;
+       }
+   }
+   console.log(str1.sw(str2));
+   
+     
+    </script>
+</body>
+</html>
