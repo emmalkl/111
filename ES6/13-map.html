@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //   let maps=new Map();
+    //   let obj={
+    //       name:"123"
+    //   }
+    //   let obj2={
+    //       age:"20"
+    //   }
+    //   maps.set("name","xiaoming")//set存两个参数
+    //   maps.set("person",obj)
+    //   maps.set(obj2,"hello")
+    //   maps.set(0,"world")//key值不能重复,value可以
+    //   console.log(maps);
+
+    let mo=new WeakMap();
+    let obj={
+        name:"xiaoming"
+    }
+    mo.set(obj,"fellow")
+    // mo.set("abc","123")//只接受对象key，报错
+    mo.set(null,"fellow")//null是object,but不行
+    console.log(mo);
+    
+      
+    </script>
+</body>
+</html>
