@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      #can{
+          background: black
+      }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="300" height="300"></canvas>
+    <script>
+       var oCan = document.getElementById("can");
+       var can = oCan.getContext("2d");
+        oCan.onmousedown=function(e){
+        can.beginPath();
+        can.moveTo(e.clientX,e.clientY);
+        can.strokeStyle="white";
+        can.lineWidth="2"
+        oCan.onmousemove=function(e){
+        can.lineTo(e.clientX,e.clientY);
+       }
+       oCan.onmouseup=function(e){
+        can.stroke();
+       }
+       }
+       
+    </script>
+</body>
+</html>
