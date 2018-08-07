@@ -65,4 +65,34 @@ $name:width;
     width: (100px) / 2;
     font-size: 10px/10px
   }
+  $num:'aa';
+  .div13{
+      background-image: url($num+'.jpg');
+  }
+  .div14{
+      color: lighten(rgb(0,0,255),20%);
+  }
+  .div15{
+      color: darken(rgb(0,0,255),20%)
+  }
+  .div16{
+      color: opacify(rgba(0,0,0,.5),.3)
+  }
+  .div17{
+      color: transparentize(rgba(0,0,0,.5),.3)
+  }
+  $m:(light:#000,dark:#fff);
+  .div18{
+      color: map-get($m,dark)
+  }
+  @function foo($key){
+      @if($key=='1'){
+          @return red;
+      }@else{
+          @return blue;
+      }
+  }
+  .div19{
+      color: foo("3")
+  }
 

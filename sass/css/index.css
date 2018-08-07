@@ -67,4 +67,32 @@ li {
   font-size: 10px/10px;
 }
 
+.div13 {
+  background-image: url("aa.jpg");
+}
+
+.div14 {
+  color: #6666ff;
+}
+
+.div15 {
+  color: #000099;
+}
+
+.div16 {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.div17 {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.div18 {
+  color: #fff;
+}
+
+.div19 {
+  color: blue;
+}
+
 /*# sourceMappingURL=index.css.map */
