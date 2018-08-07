@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .app-nam,.app-sel{
+            width: 550px;
+            margin: 10px auto;
+        }
+        button{
+            background-color: cornflowerblue;
+            color: aliceblue;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="clearfix">
+       <div v-html="todolist" style="text-align: center"></div>
+       <div class="app-sel" style="width: 250px">
+            <input type="text" value="请输入关键字">
+            <button>搜索</button>
+       </div>
+       <div class="app-nam">
+           商品名称<input type="text" value="请输入名称">
+           商品价格<input type="text">
+           <button>增加</button>
+       </div>
+       <table>
+           <tr>
+               <td></td>
+           </tr>
+       </table>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+      new Vue({
+          el:"#app",
+          data:{
+             todolist:"<h1>todolist</h1>",
+          },
+          obj={
+              商品
+          }
+      })
+    </script>
+</body>
+</html>
