@@ -5,36 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .app-nam,.app-sel{
-            width: 550px;
-            margin: 10px auto;
-        }
-        button{
-            background-color: cornflowerblue;
-            color: aliceblue;
-            border: none;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <div id="app" class="clearfix">
+    <div id="app" class="clearfix container">
        <div v-html="todolist" style="text-align: center"></div>
-       <div class="app-sel" style="width: 250px">
-            <input type="text" value="请输入关键字">
-            <button>搜索</button>
-       </div>
-       <div class="app-nam">
-           商品名称<input type="text" value="请输入名称">
-           商品价格<input type="text">
-           <button>增加</button>
-       </div>
-       <table>
-           <tr>
-               <td></td>
-           </tr>
-       </table>
+       <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="inputPassword2" class="sr-only">请输入关键字</label>
+              <input type="text" class="form-control" id="inputPassword2" placeholder="请输入关键字">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">搜索</button>
+        </form>
+        <div class="row">
+                <form class="form-inline">
+                        <div class="form-group mb-2 col-md-3">
+                          <label for="staticEmail2" class="sr-only">Email</label>
+                          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="商品名称">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 col-md-3">
+                          <label for="inputPassword2" class="sr-only">Password</label>
+                          <input type="text" class="form-control" id="inputPassword2" placeholder="请输入名称"  v-model="inp">
+                        </div>
+                </form>
+                <form class="form-inline">
+                        <div class="form-group mb-2 col-md-3">
+                          <label for="staticEmail2" class="sr-only">Email</label>
+                          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="商品价格">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 col-md-3">
+                          <label for="inputPassword2" class="sr-only">Password</label>
+                          <input type="text" class="form-control" id="inputPassword2" placeholder="0" v-model.number="price">
+                        </div>
+                </form>
+                <button type="button" class="btn btn-primary" @click="test">增加</button>
+        </div>
+        <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">选择</th>
+                    <th scope="col">商品名称</th>
+                    <th scope="col">商品价格</th>
+                    <th scope="col">删除</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(items,index) in objArr">
+                    <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input" v-bind:value="index"   v-model="ind"></th>
+                    <td>{{items.name}}</td>
+                    <td>{{items.price}}</td>
+                    <td><button type="button" class="btn btn-danger" style="color: aliceblue" @click="del(index)">
+                            <div class="close" aria-label="Close" style="color: aliceblue">
+                                    <span aria-hidden="true">&times;</span>
+                            </div></button>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td><button type="button" class="btn btn-danger" @click="mulchoice">删除选中</button></td>
+                      <td colspan="3">总价：{{sums}}元</td>
+                  </tr>
+                </tbody>
+        </table>
     </div>
     <script src="vue.js"></script>
     <script>
@@ -42,9 +73,50 @@
           el:"#app",
           data:{
              todolist:"<h1>todolist</h1>",
+             inp:"",
+             price:null,
+             objArr:[
+              {
+                  name:"mark",
+                  price:123
+              },
+              {
+                  name:"sadh",
+                  price:465
+              },
+              {
+                  name:"dfj",
+                  price:657
+              }
+             ],
+             ind:[],
           },
-          obj={
-              商品
+          computed:{
+              sums(){
+                  var sum=0;
+                  for(var i=0;i<this.ind.length;i++){
+                      sum=sum+this.objArr[this.ind[i]].price;
+                  }
+                  return sum;                           
+              }
+          },  
+          methods:{
+              test(){
+                 this.objArr.push({
+                     name:this.inp,
+                     price:this.price
+                 })
+              },
+              del(index){
+                  this.objArr.splice(index,1)
+              },
+              mulchoice(){                 
+                  for(var i=0;i<this.ind.length;i++){
+                    // this.ind[i]=null;
+                    // console.log(this.ind);                    
+                    this.objArr.splice(this.ind[i],1);
+                  }
+              }
           }
       })
     </script>

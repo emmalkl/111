@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      .active{
+          background: #ddd;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+</head>
+<body>
+    <div id="app">
+        <!-- <form action="">
+            <button type="button">提交</button>
+        </form> -->
+        <div>
+            <input type="text" placeholder="搜索" v-model="serchval">
+            <input type="button" value="搜索" @click="serch">
+        </div>
+        <div>
+            <input type="text" placeholder="名称" v-model="name">
+            <input type="text" placeholder="价格" v-model.number="price">
+            <input type="button" value="添加" @click="add">
+        </div>
+        <table>
+            <thead>
+              <tr>
+                <th scope="col">选择</th>
+                <th scope="col">商品名称</th>
+                <th scope="col">商品价格</th>
+                <th scope="col">删除</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr v-bind:class="{active:item.isselected}" v-for="(item,index) in objArr" @click="checkline(item)" :key="index">
+                    <td><input type="checkbox" v-bind:value="item.id" v-model="check"></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td><input type="button" value="删除" @click="delsingle(id)"></td>
+                </tr>
+                <tr>
+                    <td><button @click="delcheck">删除选中</button></td>
+                    <td colspan="3">价格：{{sum}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <script src="vue.js"></script>
+    <script>
+      new Vue({
+          el:"#app",
+          data:{
+            id:6,
+            name:"",
+            price:0,
+            checklist:[],
+            serchval:'',
+            objArr:[
+              {
+                  id:"1",
+                  name:"mark",
+                  price:123,
+                  isselected:false
+              },
+              {
+                  id:"2",
+                  name:"sadh",
+                  price:465,
+                  isselected:false
+              },
+              {
+                  id:"3", 
+                  name:"dfj",
+                  price:657,
+                  isselected:false
+              }],
+          },
+          methods:{
+              checkline(obj){
+                  obj.isselected=!obj.isselected;
+              },
+              add(){
+                  this.objArr.push({
+                    id:this.id++,
+                    name:this.name,
+                    price:this.price,
+                    isselected:false
+                  })
+              },
+              serch(){
+                 let newarr=this.objArr.filter(item=>{
+                     if(item.name.includes(this.serchval)){
+                         return item;
+                     }
+                 });
+                 this.objArr=newarr;
+              },
+              delsingle(id){
+                  let newarr=this.objArr.filter(item=>{
+                      if(item.id!=id){
+                          return item;
+                      }
+                  });
+                  this.objArr=newarr;
+              },
+              delcheck(){
+                  this.objArr.forEach(item=>{
+                      if(item.isselected){
+                          this.delsingle(item.id);
+                      }
+                  })
+              }
+          },
+          computed:{
+              check(){
+                  let arr=[];
+                  this.objArr.forEach(val => {
+                     if(val.isselected){
+                       arr.push(val.id);
+                     }
+                 });
+                 return arr;
+              },
+              sum(){
+                  let thisnum=0;
+                 this.objArr.forEach(val => {
+                     if(val.isselected){
+                       thisnum+=val.price
+                     }
+                 });
+                 return thisnum;
+              },
+            //   test(){
+            //       var arr=[1,2,3,4];
+            //       arr.forEach(function(val){
+            //         this/*指向window*/
+            //       })
+            //   }
+          }
+      })
+    </script>
+</body>
+</html>
