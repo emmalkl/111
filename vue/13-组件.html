@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <weichuang></weichuang>
+        <!-- <weichuang></weichuang>
+        <weichuang></weichuang> -->
+        <test></test>
+        
+    </div>
+    <div id="app2">
+        <weichuang></weichuang>
+        <test></test>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component("weichuang",{
+            template:`<div><h1>hello world</h1><h1>fellow23</h1></div>`/*template只能有一个根元素*/
+        });
+       new Vue({
+           el:"#app",
+           components:{
+               "test":{
+                   template:`<h1>aaaaaaaaa</h1>`
+               }
+           }
+       });
+       new Vue({
+           el:"#app2",
+       })
+    </script>
+</body>
+</html>
