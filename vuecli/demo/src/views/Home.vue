@@ -1,0 +1,52 @@
+<template>
+  <div class="home test">
+    <div class="scrollbar">
+       <img alt="Vue logo" src="../assets/logo.png">
+       <HelloWorld msg="Welcome to Your Vue.js App"/>
+    </div>
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+//组件
+import HelloWorld from '@/components/HelloWorld.vue'
+
+export default {
+  name: 'home',
+  components: {
+    HelloWorld
+  }
+}
+</script>
+<style>
+  .test{
+    width: 100%;
+    height: 1000px;
+    overflow: auto;
+    float: left;
+    margin: 5px;
+    border: none;
+}
+.scrollbar{
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+ 
+}
+.test-1::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 1px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+.test-1::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 10px;
+         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: #535353;
+    }
+.test-1::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        background: #EDEDED;
+    }
+</style>
+
