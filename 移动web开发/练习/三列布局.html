@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+      .container{
+        height: 100%;
+        width: 100%; 
+        }
+      .div1{
+        background: blue;
+        max-width: 60%;
+        margin: 0 auto;
+        position: relative;   
+        margin-left: 200px;
+        margin-right: 200px; 
+        height: 50px;   
+      }
+      .div2{
+        background: red;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 50px;  
+      }
+      .div3{
+        background: green;
+        position: absolute;
+        right: 200px;
+        top: 0;
+        width: 200px;
+        height: 50px;  
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="div1">middle</div>
+        <div class="div2">left</div>
+        <div class="div3">right</div>
+    </div>
+</body>
+</html>
