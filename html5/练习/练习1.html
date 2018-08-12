@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       div{
+           height: 200px;
+       }
+       #div1{
+           background: pink;
+       }
+       #div2{
+           background: aqua;
+       }
+       #div3{
+           background: aquamarine;
+       }
+       li{
+           list-style: none;
+       }
+       ul{
+           margin-top: 200px;
+       }
+    </style>
+</head>
+<body>
+    
+        <a href="#div1">linkdiv1</a>
+        <a href="#div2">linkdiv2</a>
+        <a href="#div3">linkdiv3</a>
+    
+    <ul>
+        <li><div id="div1"></div></li>
+        <li><div id="div2"></div></li>
+        <li><div id="div3"></div></li>
+    </ul>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $("div").offset().top
+    </script>
+</body>
+</html>
