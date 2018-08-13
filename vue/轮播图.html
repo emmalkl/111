@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     *{
+         margin: 0;
+         padding: 0;
+     }
+     .box{
+         border: 1px solid #000;
+         width: 490px;
+         height: 170px;
+         margin: 200px auto;
+         position: relative;
+     }
+     .img-bar li{
+         list-style: none;
+         position: absolute;
+         top: 0;
+     }
+     .btn-bar{
+         position: absolute;
+         bottom: 10px;
+         right: 10px;
+     }
+     .btn-bar li{
+        list-style: none;
+        float: left;
+        background: #f90;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        color: aliceblue;
+        margin-left: 10px;
+        text-align: center;
+     }
+     .active{
+         background: red;
+     }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="box" @mouseover="stop" @mouseout="play">
+             <ul class="img-bar">
+                 <li v-show="index==nowIndex" v-for="(items,index) in imgList" :key="index+'il'">
+                     <img src="'img/'+items+'.jpg'" alt="">
+                 </li>
+             </ul>
+             <ul class="btn-bar">
+                 <li @mouseover="change(index)" :class="{active:index==nowIndex}" v-for="(items,index) in imgList" :key="index+'bl'"></li>
+             </ul>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+       new Vue({
+           el:'#app',
+           data:{
+              nowIndex:0,
+              timer:null,
+              imgList:[
+                  '01',
+                  '02',
+                  '03',
+              ]
+           },
+           mounted(){
+               this.play()
+           },
+           methods:{
+              play(){
+                this.timer=setInterval(()=>{
+                    if(this.nowIndex==this.imgList.length-1){
+                        this.nowIndex=0;
+                    }else{
+                        this.nowIndex++
+                    }
+                    
+                },1000)
+              },
+              stop(){
+                  clearInterval(this.timer)
+              },
+              change(index){
+                  this.nowIndex=index;
+              }
+           }
+       })
+    </script>
+</body>
+</html>
