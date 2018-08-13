@@ -16,9 +16,10 @@
          height: 170px;
          margin: 200px auto;
          position: relative;
+         overflow: hidden;
      }
      .img-bar li{
-         list-style: none;
+         list-style: none; 
          position: absolute;
          top: 0;
      }
@@ -42,18 +43,39 @@
      .btn-bar .active{
          background: red;
      }
+     .bar-enter{
+         transform: translateX(100%)
+     }
+     .bar-enter-active{
+         transition: all .5s ease;
+     }
+     .bar-enter-to{
+        transform: translateX(0);
+     }
+     .bar-leave{
+         transform: translateX(0)
+     }
+     .bar-leave-active{
+         transition: all .5s ease;
+     }
+     .bar-leave-to{
+        transform: translateX(-100%);
+     }
     </style>
 </head>
 <body>
     <div id="app">
         <div class="box" @mouseover="stop" @mouseout="play">
-             <ul class="img-bar">
-                 <li v-show="index==nowIndex" v-for="(item,index) in imgList" :key="index+'il'">
-                     <img :src="'img/'+item+'.jpg'" alt="">
-                 </li>
-             </ul>
+            <ul class="img-bar" >
+                    <transition-group tag="ul" name="bar">
+                            <li v-show="index==nowIndex" v-for="(item,index) in imgList" :key="index+'il'">
+                                <img :src="'img/'+item+'.jpg'" alt="">
+                            </li>
+                        </transition-group>
+            </ul>
+             
              <ul class="btn-bar">
-                 <li @mouseover="change(index)" :class='{active:index==nowIndex}' v-for="(item,index) in imgList" :key="index+'bl'">{{index+1}}</li>
+                 <li @mouseover="change(index)" :class="{active:index==nowIndex}" v-for="(item,index) in imgList" :key="index+'bl'">{{index+1}}</li>
              </ul>
         </div>
     </div>
@@ -70,27 +92,28 @@
                   '03',
                   '04',
                   '05'
-              ]
+              ],
+              isDone:false
            },
            mounted(){
-               this.play()
+               this.play() 
+           
            },
            methods:{
-              play(){
-                this.timer=setInterval(()=>{
+               play(){
+                 this.timer=setInterval(()=>{
                     if(this.nowIndex==this.imgList.length-1){
                         this.nowIndex=0;
                     }else{
                         this.nowIndex++
                     }
-                    
-                },1000)
-              },
+                 },1500)
+               },
               stop(){
                   clearInterval(this.timer)
               },
               change(index){
-                  this.nowIndex=index;
+                    this.nowIndex=index;                
               }
            }
        })
