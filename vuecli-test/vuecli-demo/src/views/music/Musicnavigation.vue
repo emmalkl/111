@@ -40,7 +40,7 @@ export default {
                 this.isIf=true;
                 // console.log(this.dataList);   
                 for(var i=0;i<response.data.musicData.length;i++){
-                    this.dataList[i].lrc='http://localhost:8080/'+response.data.musicData[i].lrc
+                    this.dataList[i].lrc=location.origin+location.pathname+response.data.musicData[i].lrc
                 }            
            })
            .catch((error)=>{

@@ -57,7 +57,7 @@ export default {
       width: 100%;
   }
   ul{
-      position: absolute;
+      position: absolute; 
       left: 0;
       top: 52px;
   }
