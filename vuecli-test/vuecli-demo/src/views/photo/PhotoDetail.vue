@@ -47,7 +47,7 @@ export default {
         },
         // computed:{
         //     add(){
-        //         return background(url("'../../../img/'+ this.imgid+'.jpg'"))
+        //         return {background:url("'../../../img/'+ this.imgid+'.jpg'") }
         //     }
         // }
 }
