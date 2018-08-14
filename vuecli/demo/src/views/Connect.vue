@@ -4,6 +4,7 @@
     <!-- <router-link to="/connect/test1">test1</router-link> | -->
     <!--传参-->
     <router-link :to="{name:'test1',params:{name:'lisi',age:'30'}}">test1</router-link> |
+    
     <!-- <router-link to="/connect/test2">test2</router-link>  -->
      <!--传参-->
     <router-link to="/connect/test2/zhangsan/20">test2</router-link> |
