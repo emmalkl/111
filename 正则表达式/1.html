@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //   let reg=/c/;
+    //   let reg1=new RegExp('c');        /*定义方法二*/
+    //   let str="cba";
+    //   console.log(str.includes('c'));
+    //   console.log(reg.test(str));
+    //   console.log(reg.exec(str));
+
+
+    // let reg=/test/;
+    // let reg=/a{1}/;
+    // let reg=/s{2,3}/;          /*2 or 3  个S*/
+    // let reg=/s{1,}/;             /*一个以上,只能匹配连续的s，跨字母匹配不到,*/
+    // let reg=/s*/;                /*0个或多个*/
+    // let reg=/s+/;                /*等同于{1,},按顺序第一个为真的,asessd,1个s*/
+    // let reg=/s?/;                /*0个或1个,asessd,null*/
+    // let reg=/^s/;                /*以s为开头*/
+    // let reg=/c$/;                /*以c结尾*/
+    // let reg=/./;                 /*匹配第一个*/
+    // let reg=/.+/;                /*匹配全部;\n之后的不匹配*/
+    // let reg=/a|t/;               /*a or t;前面满足后面就不执行*/
+    // let reg=/^[abc].+/;          /*以a or b or c开头的所有除\n以外的所有字符*/
+    // let reg=/^[a-z][a-zA-Z0-9]_+/;  /*以小写字母开头*/
+    // let reg=/^[a-z]b.+/;         /*以小写字母开头第二位是b的所有字符*/
+    // let reg=/^[^a-z]/;              /*不以小写字母开头*/
+    // let str='atestabc';
+    // console.log(reg.exec(str));
+
+
+    // let reg=/\bd/;             /*前面以d为边界,中文后边也属于边界*/
+    // let reg=/a\b/;             /*后面以a为边界,若以空格为间隔，空格边也属于边界，\n也属于边界*/
+    // let reg=/\Bd/;                /*非边界的d*/
+    // let str='是吧dbcdef999a';
+    // console.log(reg.exec(str));
+
+    // let reg=/\d/;               /*数字*/
+    // let reg=/\D/;               /*非数字*/
+    // let str='ac1ba';
+    // console.log(reg.exec(str));
+
+
+    // let reg=/\s/;               /*空格*/
+    // // let reg=/\S/;               /*非空格*/
+    // let str='ac 1ba';
+    // console.log(reg.exec(str));
+
+    // let reg=/c?/;
+    // let str='acccdccef';
+    // console.log(reg.exec(str));
+
+    // let reg=/\w/;                /*数字字母下划线*/
+    // let reg=/\W/;                /*匹配空格*/
+    // let str='ac 1ba';
+    // console.log(reg.exec(str));
+
+    // let reg=/\W+/;                /*返回如何*/
+    // let reg=/\w\W/;               /*abcdefg,返回ab*/
+    // let str='如何';
+    // console.log(reg.exec(str));
+
+    // let reg = /^(b|c).+/; 
+    // let str='bbs.blueidea.com'; 
+    // console.log(reg.exec(str));
+
+    // let reg = /^(?:b|c).+/; 
+    // let str='bbs.blueidea.com'; 
+    // execReg(reg,str);
+
+    // let reg = /^(?:b|c)\1/;          /*反向引用不能用*/
+    // let str='bbs.blueidea.com'; 
+    // console.log(reg.exec(str));
+
+    // let reg = /cainiao(?=8)/;           /*返回cainiao*/
+    // let reg = /cainiao(?!9)/;           /*返回cainiao,后面不跟9*/
+    // let str='cainiao8'; 
+    // console.log(reg.exec(str));
+
+    // let reg = /\*/;           /*返回*,同理\+,\?*/
+    // let str='abc*d'; 
+    // console.log(reg.exec(str));
+
+    // let reg = /b/i;           /*i不区分大小写*/
+    // let str='ABCD'; 
+    // console.log(reg.exec(str));
+
+    // let reg = /^C/m;           /*C,m区分\n*/
+    // let str='AB\nCD'; 
+    // console.log(reg.exec(str));
+
+    // let reg = /C/g;           /*AB9D9*/
+    // let str='ABCDC'; 
+    // // console.log(reg.exec(str));
+    // console.log(str.replace(reg,9));
+    // console.log(str.match(reg));/*C C*/
+    
+    let reg=/(\w+).(\w+).(\w+)/;
+    let str='bbs.blueidea.com'; 
+    // console.log(reg.exec(str));
+    var newStr=str.replace(reg,'$2.$1.$3')
+    console.log(newStr);
+
+    // let reg=/\W/;
+    // let str='bbs.blueidea.com'; 
+    // let pos=str.search(reg);
+    // console.log(pos);
+    
+    // let reg=/\W/;
+    // let str='bbs.blueidea.com'; 
+    // let arr=str.split(reg);
+    // console.log(arr);
+
+
+    // 30CAC0040  取出0040
+    // 3SFASDF92  取出92
+    // let reg=/\d+$/;
+    // let str='30CAC0040';
+    // console.log(reg.exec(str));
+
+
+    //蓝    色        理          想 
+    //变成： 蓝 色 理 想 
+    // let reg=/\s+/g;
+    // let str='蓝    色        理          想 ';
+    // console.log(str.replace(reg,' '));
+
+    // let reg=/(?<fir>\w+).(?<sec>\w+).(?<thi>\w+)/;   /*分组*/
+    // let str='bbs.blueidea.com'; 
+    // console.log(reg.exec(str).groups.fir);
+    
+
+    </script>
+</body>
+</html>
