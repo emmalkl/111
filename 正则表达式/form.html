@@ -23,7 +23,7 @@
           
           var reg=/@/;
           var reg1=/\./;
-          var reg2=/\d+/;
+          var reg2=/^\\d+$/;
           if(reg.test(inp1) && reg1.test(inp2) && reg2.test(inp3)){
                     alert("提交成功");
           }
