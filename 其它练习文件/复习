@@ -1,0 +1,20 @@
+1.标准盒模型和怪异盒模型（ie5）
+2.权重值：* 0 <标签选择器 10 <类 100 <id 1000 <style 10000 <!important
+3.id唯一，类可以重复
+4.两列布局
+5.css position ，遮罩层
+6.伪类（horvor，first-child。。）和伪元素（after，）
+7.弹性盒模型justify-content，flex-wrape
+8.css3旋转立方体
+9.jquery：
+10.html5：dataset，cookie过期时间/locallstorage；httponly阻止js对cookie攻击
+11.es6：变量提升，优先级Var>function
+12.es6:闭包
+13.基本数据类型：string/number/undefine/null/boolean
+14.引用数据类型（栈内存，队内存）：function/数组/
+15.数组遍历：foreach/map/filter/some/every/entries/keys/for/arr.includes
+16.sass
+17.webpack
+18.父向子组件传值props，子向父传值$emit()
+19.插槽传值slot
+20.
