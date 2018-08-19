@@ -79,7 +79,7 @@
         console.log(e.clientX,e.clientY);
         oUl.style.top=e.clientY+"px";
         oUl.style.left=e.clientX+"px";
-        return false;
+        return false;/*阻止浏览器默认行为*/
     }
     var aLi=document.getElementsByTagName("li")
     for(var i=0;i<aLi.length;i++){
