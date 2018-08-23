@@ -7,7 +7,7 @@
             <div>
                 <ul>
                     <li  @click="$router.push({name:'photodetail',params:{id:index+1}})"  v-for="(items,index) in imgList" :key="index+'il'">
-                        <img :src="'../../../img/'+ items +'.jpg'" alt=""/>
+                        <img :src="'./img/'+ items +'.jpg'" alt=""/>
                     </li>
                 </ul>
             </div>

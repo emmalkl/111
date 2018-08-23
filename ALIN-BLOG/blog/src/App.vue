@@ -3,7 +3,7 @@
     <div id="nav">
       
     </div>
-    <div class="router-trans">
+    <div class="router-trans" ref="sca">
       <transition :name="tmode">
          <router-view @changeRouter="changeRouter"/><!-- 切换的位置 -->
       </transition>
@@ -26,10 +26,10 @@ export default {
     window.onresize = ()=>{
       let clih=document.documentElement.clientHeight;
       let cliw=document.documentElement.clientWidth;
-      if(cliw/clih<=1.26){
-        this.$refs.sca.style.transform='translate(-50%, -50%) scale('+cliw/clih+')';
+      if(cliw/clih<=1){
+        this.$refs.sca.style.transform='scale('+cliw/clih+')';
       }else{
-         this.$refs.sca.style.transform='translate(-50%, -50%) scale('+clih/500+')';
+         this.$refs.sca.style.transform='scale(1)';
       }
     }
   },
@@ -37,6 +37,14 @@ export default {
 </script>
 
 <style>
+#app{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
 .fade-enter{
   width: 100%;
   transform: translateX(-100%);
@@ -90,4 +98,17 @@ export default {
   width: 100%;
   transform: translateX(-100%);
 }
+.router-trans{
+  /* position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(1.26);
+  box-sizing: border-box */
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
 </style>

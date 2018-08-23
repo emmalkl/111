@@ -58,16 +58,16 @@ export default {
   color: aliceblue;
 }
 .item1-image,.item1-text{
-  left: 56px;
+  left: 5%;
 }
 .item2-image,.item2-text{
-  left: 240px;
+  left: 32%;
 }
 .item3-image,.item3-text{
-  left: 420px;
+  left: 57%;
 }
 .item4-image,.item4-text{
-  left: 597px;
+  left:82%;
 }
   .pic-1{
     animation: github;

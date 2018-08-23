@@ -37,22 +37,27 @@ export default {
   margin: 0;
   padding: 0;
 }
-.home,.about,.introduction{
-   position: fixed;
+.home,.about,.introduction,.learn{
+   /* position: fixed;
    top:0;
    bottom: 0;
    right: 0;
-   left: 0;
+   left: 0; */
+   height: 100%;
+   width: 100%
  }
 .content{
-   width: 720px;
+   /* width: 720px;
    height: 520px;
    position: absolute;
    top:50%;
    left: 50%;
-   transform: translate(-50%,-50%) scale(1.26);
-   font-size: 3.5vw;
+   transform: translate(-50%,-50%) scale(1.26); */
+  width: 95%;
+  height: 95%;
+  margin:0 auto;
    font-weight: 100;
+   box-sizing: border-box;
  }
 .home p{ 
   width: 100%;

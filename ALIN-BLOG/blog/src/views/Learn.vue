@@ -1,7 +1,19 @@
 <template>
   <div class="learn">
     <div class="content">
-       
+      <div class="lea-con">
+        <div><span>Html5</span></div>
+        <div><span>CSS3</span><span>VUE</span></div>
+        <div><span>JQUERY</span><span>NODE</span><span>WEBPACK</span></div>
+        <div><span>VSCODE</span><span>DOM</span><span>ES6</span><span>CSS</span></div>
+      </div>  
+      <img src="../assets/img/yandex-disk.png" alt="">
+      <img src="../assets/img/cloud.png" alt="">
+      <img src="../assets/img/cloudy.png" alt="">
+      <img src="../assets/img/dog.png" alt="">
+      <img src="../assets/img/spideroak.png" alt="">
+      <img src="../assets/img/spideroak.png" alt="">
+      <img src="../assets/img/sugarsync.png" alt="">
     </div>
     <div class="com">
       <i class="iconfont icon-iconfont-left" @click="$router.push('/2'),$emit('changeRouter','fade')"></i>
@@ -14,3 +26,84 @@ export default {
   
 }
 </script>
+<style scoped>
+.learn span{
+  font-size: 12px
+}
+.lea-con{
+  margin: 0 auto;
+  width: 300px;
+}
+.lea-con div{
+  height: 20px;
+}
+.learn img{
+  width: 50px;
+  height: 50px;
+}
+img:nth-child(2){
+  position: absolute;
+  top:40px;
+  left: 55px;
+  animation: disk;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes disk{
+    from {transform:rotate(0) scale(1)}
+    to {transform: rotate(15deg) scale(1.8)}
+  }
+img:nth-child(3){
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top:20px;
+  right: 90px;
+}
+img:nth-child(4){
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top:46px;
+  right: 10px;
+}
+img:nth-child(5){
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom:30px;
+  right: 40px;
+}
+img:nth-child(6){
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom:30px;
+  left: 55px;
+}
+img:nth-child(7){
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom:30px;
+  left: 70px;
+}
+img:nth-child(8){
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top:39px;
+  right: 56px;
+  animation: bird;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes bird{
+    from {transform:translateX(15px)}
+    to {transform: translateX(0)}
+  }
+</style>
