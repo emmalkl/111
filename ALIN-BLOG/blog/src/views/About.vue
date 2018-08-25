@@ -29,10 +29,38 @@ export default {
 }
 </script>
 <style scoped>
-.content{
+/* .about{
+  display: table;
+} */
+.about .content{
+  width: 75%;
+  height: 80%;
+  /* display: table-cell;
+  vertical-align: middle; */
   border:2px solid #000;
   display: flex;
   position: relative;
+}
+@media (min-width: 1125px) {
+  .about .content{
+  width: 67%;
+  height: 95%;
+  display: flex;
+}
+}
+@media (max-width: 1125px){
+  .about .content{
+  width: 890px;
+  height: 660px;
+  display: flex;
+}
+}
+@media (max-width: 960px) {
+  .about .content{
+  width: 800px;
+  height: 660px;
+  display: flex;
+}
 }
 .con-item1,.con-item2,.con-item3,.con-item4{
   flex: 1;
@@ -46,28 +74,28 @@ export default {
 }
 .item1-image,.item2-image,.item3-image,.item4-image{
   position: absolute;
-  top:213px;
+  top:253px;
 }
 .item1-text,.item2-text,.item3-text,.item4-text{
   position: absolute;
-  top:273px; 
-  font-size: 1.3vw!important;
+  top:332px; 
+  font-size: 1.8vw!important;
   flex: 1;
 }
 .item1-text,.item3-text{
   color: aliceblue;
 }
 .item1-image,.item1-text{
-  left: 5%;
+  left: 8%;
 }
 .item2-image,.item2-text{
-  left: 32%;
+  left: 33%;
 }
 .item3-image,.item3-text{
-  left: 57%;
+  left: 58%;
 }
 .item4-image,.item4-text{
-  left:82%;
+  left:84%;
 }
   .pic-1{
     animation: github;

@@ -58,6 +58,11 @@ export default {
   margin:0 auto;
    font-weight: 100;
    box-sizing: border-box;
+   margin: 0;
+   position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
  }
 .home p{ 
   width: 100%;
@@ -69,6 +74,7 @@ export default {
   top:40%;
   left: 50%;
   transform: translate(-50%,-50%);
+  font-size: 70px;
  }
  .summer{
    position: absolute;
@@ -83,8 +89,8 @@ export default {
    margin-left: -30px;
  }
  .content img{
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
   }
   .com{
     position: fixed;
@@ -112,14 +118,14 @@ export default {
     to {transform: rotate(45deg)}
   }
   .line{
-    width: 100px;
+    width: 120px;
     height: 2px;
     background: #000;
     position: absolute;
     bottom: 27%;
-    margin-bottom: 2px;
+    margin-bottom: 0;
     left: 50%;
-    margin-left: -50px;
+    margin-left: -60px;
   }
   #pic-name{
     animation: name;
@@ -127,10 +133,13 @@ export default {
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-direction: normal;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+    opacity: 0;
   }
   @keyframes name{
     from {transform: translate(-58%,-50%)}
-    to {transform: translate(-50%,-50%)}
+    to { opacity: 1;transform: translate(-50%,-50%)}
   }
   #pic-island{
     animation: island;
@@ -138,10 +147,13 @@ export default {
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-direction: normal;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+    opacity: 0;
   }
   @keyframes island{
     from {transform: translateY(50px)}
-    to {transform: translateY(0)}
+    to {opacity:1;transform: translateY(0)}
   }
 </style>
 

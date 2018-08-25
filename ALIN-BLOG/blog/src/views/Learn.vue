@@ -43,8 +43,8 @@ export default {
 }
 img:nth-child(2){
   position: absolute;
-  top:40px;
-  left: 55px;
+  top:70px;
+  left: 131px;
   animation: disk;
   animation-duration: 2s;
   animation-timing-function: linear;
@@ -56,46 +56,44 @@ img:nth-child(2){
     to {transform: rotate(15deg) scale(1.8)}
   }
 img:nth-child(3){
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   position: absolute;
-  top:20px;
-  right: 90px;
+  top:50px;
+  right: 177px;
 }
 img:nth-child(4){
   width: 90px;
   height: 90px;
   position: absolute;
-  top:46px;
-  right: 10px;
+  top:83px;
+  right: 100px;
 }
 img:nth-child(5){
-  width: 40px;
-  height: 40px;
   position: absolute;
   bottom:30px;
-  right: 40px;
+  right: 162px;
 }
 img:nth-child(6){
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   position: absolute;
   bottom:30px;
-  left: 55px;
+  left: 130px;
 }
 img:nth-child(7){
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   position: absolute;
   bottom:30px;
-  left: 70px;
+  left: 147px;
 }
 img:nth-child(8){
   width: 30px;
   height: 30px;
   position: absolute;
-  top:39px;
-  right: 56px;
+  top:73px;
+  right: 145px;
   animation: bird;
   animation-duration: 1s;
   animation-timing-function: linear;

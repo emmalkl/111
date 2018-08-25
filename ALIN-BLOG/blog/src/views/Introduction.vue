@@ -36,7 +36,7 @@ export default {
   height: 200px;
   position: absolute;
   top:50%;
-  left: 12%;
+  left: 24%;
   margin-top: -100px;
   animation: que;
   animation-duration: 500ms;
@@ -82,7 +82,7 @@ export default {
     to {opacity:1;transform: translateX(0)}
   }
 .con-text{
-  left: 68%;
+  left: 60%;
   animation: text;
   animation-duration: 500ms;
   animation-timing-function: linear;
