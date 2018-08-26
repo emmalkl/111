@@ -1,0 +1,2 @@
+1. git上传项目error: failed to push some refs to 'https://git.oschina.net/xxxxxx/aaaaaa.git'
+git push -f origin master
