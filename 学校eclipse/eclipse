@@ -9,7 +9,7 @@
   1）优化布局结构
   Open Perspective->切换默认JavaEE开发视图模式，至Java开发视图模式->删除Task list视图->拖动Outline程序结构视图，至Project Explorer工程视图下方->删除tool bar多余功能按钮(Window->Perspective->customize Perspective->仅保留debug run即可)
   2)修改字体样式
-  Window->Perspective->General->appearance->colors and font->basic->text font
+  Window->Preferences->General->appearance->colors and font->basic->text font
   3)添加代码自动补全
     
     Eclipse-window-Preferences-java-Editor-Content Assist
@@ -31,6 +31,9 @@
 Window -> Preferences -> General -> Workspace -> Text file encoding，在 Text file encoding 中点击 Other，选择 UTF-8
 如果用到jsp也可以修改 JSP 字符编码，Window -> Preferences -> Web -> JSP Files->Encoding:iso 10646/unicode(UTF-8)
 4、导入已有工程，至本地工作空间？？？
-
+  导入工程：file->import->General->existing Projects into workspace->选择工程路径，选择复制到 workspace 工作空间，不会对原工程项目产生影响(browser->选已有文件->creat √)
+  工程配置错误修正：导入工程后，由于工程 eclipse 配置与本地 eclipse 不同，例如 JRE 配置，Tomcat 服务器配置 等不同，会显示错误信息 
+  导入文件下java resources->右键点击工程，选择最下方法的属性 Properties->在 java build path 下，移除工程配置中 unbound 的库(remove)->添加本地 eclipse 服务器的支持 (add library-server runtimr->tomcat>)
+  同理如果工程 JRE 配置错误 unbound，可添加本地 JRE 配置 ,使用 eclipse workspace 默认 JRE 配置即可 (system library)
 5、配置 Eclipse 关联 Tomcat 服务器 
-eclipse->Perspective->server->runtime environment->Add->Apache Tomcat v9.0->creat √->browser->定位到解压后的 tomcat 文件夹 ->finish->工程目录下会创建一个本地的 tomcat 服务器 
+eclipse->Preferences->server->runtime environment->Add->Apache Tomcat v9.0->creat √->browser->定位到解压后的 tomcat 文件夹 ->finish->工程目录下会创建一个本地的 tomcat 服务器 
