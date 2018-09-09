@@ -1,0 +1,75 @@
+1.node版本安装 node -v
+包管理系统：npm
+npm install supervisor 当前文件夹下的node-modules
+npm install -g supervisor
+npm install connect
+npm install mysql
+
+ rpm -ivh gcc-4.2.0.rpm 
+redhat --CentOS     rhel yum install yy
+debian--ubuntu      apt-get install xx
+2.编写node代码
+repl
+自动加载内置模块：console;globe;module;process;timer
+（http协议【http权威指南】；软刷硬刷；缓存;es6）  原型链 demo.__proto__
+3.什么时候执行时间队列：当前进程空闲；满足触发条件（时间条件；磁盘I/O；网络I/O;自定义事件）
+for(var i=1;i<3;i++){
+  setTimeout(function(){
+      console.log(i)//此函数会进入envelope事件队列中;若function传入i，输出end undefine undefine undefine
+  },0);
+}
+console.log("end");//end 4 4 4
+
+
+http四大关键字：get post put delete
+1byte=8bit;1int=2 4 8byte
+
+4.
+/*v8理解为  function aa()先执行*/
+aa();//456
+//console.log(aa)//没有下面的function时，aa undefine
+var aa=function(){
+    console.log(123)
+}
+
+aa();//123
+
+function aa(){
+    log(456)
+}
+aa();//123
+
+5.
+var start=new Date();
+setTimeout(function(){
+    var end=new Date();
+    console.log('Time elapsed:',(end-start),'ms')//1000
+},500);
+while(new Date-start<1000){}
+
+6.使用http创建web server(request,response)
+php--Apache;Ngnix
+Java--Tomcat Webblogic
+
+
+var http=require('http');
+http.creatServer(function(req,res){
+    res.writeHead(200,{'Content-type':'text/plain'})
+    res.end('hello world')
+}).listen(3000);
+console.log('server start')
+//数据包：包头；包体
+文件编码 ANSI Unicode utf-8
+浏览器解码 gbk  gb2312  gb18030
+数据库编码
+nodejs:单进程  webpack:nodejs下的子进程crashing child
+
+7.instanceof子集
+8.eval('('+str+')')  
+
+
+day2
+1.exports
+2.引用赋值b.name={2}；  直接赋值var b={name:'3'}  b指向地址改变(内存地址变了)
+3.如何定位浏览器的ip地址，dns，行为 -------user-agent
+如何从前端确定该页面是从哪来...--------referer

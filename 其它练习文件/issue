@@ -1,2 +1,5 @@
 1. git上传项目error: failed to push some refs to 'https://git.oschina.net/xxxxxx/aaaaaa.git'
 git push -f origin master
+2.nowindex=$(this).index();
+当前对象的index方法的值赋值给index变量, jq里index()就是当前对象相对于其他指定元素的 index 位置<li>1</li> <li>2</li> <li>3</li> //像这样，我点1就的index()就是0，点2的index()就是1
+3.
