@@ -1,0 +1,52 @@
+spa单页面应用\seo搜索引擎优化
+ssr
+//搜索引擎优化:
+vue--nuxt服务端渲染
+next react服务端渲染
+or  prerender-spa-plugin预渲染
+有道云笔记
+
+
+//php 
+1.php--webserver --apache  80,443
+数据库：mysql---3306
+连接mysql的工具--navicat
+xampp(apache&mysql)
+
+
+创建项目--apache发布目录
+CI---MVC框架
+model--mysql
+controller控制器--调度model\view  
+view--前端页面
+
+http://localhost/lindatest/index.php/user/login?id=1&name=laoshan
+$_GET['id']   $_GET['name']
+$this->input->get('id')
+
+http://localhost/lindatest/index.php/user/login/1/laoshan/19
+   域名           项目名    入口文件  控制器名 方法名
+                                     1     2   3     4
+
+url
+database
+session
+url--segment(3)
+
+数据库操作：增insert insert into 表名（列名，列名。。） values（）/删delete/改update/查select
+
+//cookie&localstorage&sessionstorage&db&  5个本地化存储
+
+
+//str1:a m i n b v c    m       (?a*m*i*n。。。/（r*t*u...）的时间复杂度)
+//str2:r t u i o        n       匹配
+plan1:嵌套for循环
+plan2:hastable
+//响应化设计
+2.MVC
+foreach()循环关联数组      for()循环索引数组
+
+
+
+
+

@@ -1,0 +1,33 @@
+ child_proccess：
+         supervisor---热更新
+         pm2
+
+         cluster---集群
+
+         console--控制台
+         console.count
+
+         crypto---md5,rc6,sha1,rsa
+         dgram ---udp服务器
+         dns --
+         Error --
+         events ----继承
+         fs ---rename stats readFile
+         global---
+         http---
+         https----ssl
+         module
+         net ----TCP服务器  ---关键字
+         os ---操作系统
+         path ---join静态资源管理器
+         process--
+         querystring---
+         url ---
+         util ---inherit
+ Buffer：
+		 urlencode ----浏览器url转码
+		 iconv---ajax转码
+		 json_encode ---json转码
+		 base64_encode ---base64转码
+		 Buffer  ---十六进制---- utf-8 gbk
+
