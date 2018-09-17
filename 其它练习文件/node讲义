@@ -1,0 +1,30 @@
+第一节
+1.node版本安装 node -v         [全局/非全局]
+      npm install supervisor 当前项目文件夹下的node_modules
+      npm install -g supervisor  在c盘->用户->player->查看显示隐藏文件夹->AppData->Roaming->npm
+      npm install -g cnpm
+      npm install connect/mysql
+node包管理系统（解决包依赖问题）：npm
+windows会把lib dll exe pdf txt统一打包在同一个文件夹  
+Linux  可执行体会放在一个文件夹；功能分的很清楚；但有一些依赖版本的包无法安装
+redhat推出包管理系统 debian--Ubuntu apt-get
+      redhat--CentOs     rhel yum install yy(另一种打包方式)
+      apt-get install xx.rpm---会把依赖的包自动下载
+2.如何编写node代码
+repl
+      原生js没有console.log，chrome支持
+      console控制台
+      自动加载的内置模块：console/global/module/
+      http协议&http缓存  软刷硬刷校验内存--cache-control(etag【hash校验】/expires/last-modified【最后被修改的时间，与远端数据的时间是不是同一个】希望文件存在多久被删除)视频1  44分钟
+      本地化存储的方式 locastorage sessiostorage cookie
+      跨域（前端、后端）
+3.封装：public/private/
+      公有方法访问私有变量.....
+4.原型链：Demo.prototype==demo.__proto__
+5.module:
+      var demo=new Demo();
+      exports.mm=demo;[demo为一个函数]   第二个文件var xx=require('')->xx.
+  or  exports.mm={
+        'a':1,
+      }
+      
