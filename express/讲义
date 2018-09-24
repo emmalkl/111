@@ -1,0 +1,32 @@
+1.express(MVC模式)创建项目： ejs jade template
+  mkdir noded
+  express -e noded创建项目
+  接下来按顺序
+  node ./bin/www      
+  localhost:3000
+  (baby-parser  server-favicon没有这俩包)
+  ————————————————————————
+  [注1]var app = require('../app');若这样就是加载app文件夹里的index.js
+  [2]http.creatserver(function(res),req)
+  [3]var port = normalizePort(process.env.PORT || '3000');一个服务就有一个端口
+  [4]express文档
+  [5]app.set()
+  [6]app.js就是express  入口文件
+  ________________________
+  node server.js --可以响应服务  后面路径输xx--响应一个cookie
+  eg:cookie: 'Webstorm-6b4fb4d4=34d885cd-e777-4986-bacc-7c2bc5df9055; Hm_lvt_382f81c966395258f239157654081890=1527324032'
+  
+  app.js(入口文件)--router/index.js(路由文件)
+  express.Router()响应HTTP method routes (such as get, put, post, and so on)
+  res:服务器向浏览器传东西
+  ________________________
+  步骤：1.在router里配置index.js (例子见noded/router/index.js   页面跳转'/xx')
+       2.在noded创建controllers和models  在router里index.js写router.get('/reg',User.reg);
+       ->index.js里var User=require('../controllers/user.js')
+       ->controllers文件夹下创建user.js
+       ->user.js 写exports.reg=function(){}
+       3.
+
+
+
+

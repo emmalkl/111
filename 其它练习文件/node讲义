@@ -10,7 +10,7 @@ Linux  可执行体会放在一个文件夹；功能分的很清楚；但有一�
 redhat推出包管理系统 debian--Ubuntu apt-get
       redhat--CentOs     rhel yum install yy(另一种打包方式)
       apt-get install xx.rpm---会把依赖的包自动下载
-2.如何编写node代码
+2.如何编写node代码  输入node
 repl
       原生js没有console.log，chrome支持
       console控制台
@@ -27,4 +27,10 @@ repl
   or  exports.mm={
         'a':1,
       }
+6.node环境：js解析器（.exit退出）--cmd shell命令
+    shell环境（cmd shell/powershell/gitshell）
+    mac shell
+
+二、
+npm init->express myapp->cd myapp->npm install->npm start
       
