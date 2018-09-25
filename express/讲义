@@ -2,9 +2,9 @@
   mkdir noded
   express -e noded创建项目
   接下来按顺序
-  node ./bin/www      
+  node ./bin/www      (www里面配console.log('server start port 3000');)
   localhost:3000
-  (baby-parser  server-favicon没有这俩包)
+  (baby-parser对post请求的请求体进行解析  server-favicon没有这俩包)
   ————————————————————————
   [注1]var app = require('../app');若这样就是加载app文件夹里的index.js
   [2]http.creatserver(function(res),req)
@@ -26,6 +26,14 @@
        ->controllers文件夹下创建user.js
        ->user.js 写exports.reg=function(){}
        3.
+  ————————————————————————
+2.[1]json_encode可以把数组转换为Json字符串;
+  [2]一切数据传输皆对象，数据包（包头和包体）
+  [3]req.body.name 
+  [4]nodejs进程管理: pm2包 (github)
+   (1)创建ejs项目：express -e microblog->cd microblog->npm install->npm start
+   (2)
+
 
 
 
