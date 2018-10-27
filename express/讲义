@@ -1,4 +1,5 @@
 1.express(MVC模式)创建项目： ejs jade template
+//建立noded--express脚手架并运行顺序
   mkdir noded
   express -e noded创建项目
   接下来按顺序
@@ -31,8 +32,16 @@
   [2]一切数据传输皆对象，数据包（包头和包体）
   [3]req.body.name 
   [4]nodejs进程管理: pm2包 (github)
+  [5]jquery是静态资源包应放在public下的javascript里
+  [6]$.post()请求从服务器载入数据
+  -------------------------
    (1)创建ejs项目：express -e microblog->cd microblog->npm install->npm start
-   (2)
+   (2)crypto加密：见noded/user.js (do_reg \ xmd5)
+   (3)验证用户名重名：
+       reg.ejs配$.post("/checkname","username:"+val,function(data){})
+       ->router/index.js配router.post("/checkname",User.checkname)
+       ->controllers/user.js配exports.checkname=function(req,res,next){}
+   (4)
 
 
 

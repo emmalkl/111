@@ -1,3 +1,7 @@
+noded--express
+nodelao--node语法
+nodeb&nodel&test--试建express脚手架
+
 第一节
 1.node版本安装 node -v         [全局/非全局]
       npm install supervisor 当前项目文件夹下的node_modules
@@ -30,7 +34,14 @@ repl
 6.node环境：js解析器（.exit退出）--cmd shell命令
     shell环境（cmd shell/powershell/gitshell）
     mac shell
-
+7.http协议：无状态（说完一句话就断掉了，网页要获得一个信息要刷新）；
+  ajax（首先要创建ajax引擎，axios）异步获取数据；
+  有状态：两台机器通讯，随时讲话都能听到
+  http：get(4096字节) post put delete
+  1byte=8bit , 1int=2   4   8byte 
+  function有return叫函数，没有叫过程；
+  好多服务器，怎么判断死机？
+8.
 二、
 npm init->express myapp->cd myapp->npm install->npm start
       
