@@ -46,6 +46,7 @@
     right: 20px;
     color: aliceblue;
     padding: 0 15px;
+    cursor: pointer;
 }
 /*页脚设置*/
 .footer{
@@ -103,8 +104,12 @@
 /*选中的li变颜色*/
 .active{
     background-color:#3dbe5b;
+    color:red;
 }
 /*控制二级导航显示隐藏*/
 .sel:hover .list-zy{
     display: block;
+}
+.list-zy>li:hover{
+    color: red;
 }
