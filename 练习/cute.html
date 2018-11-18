@@ -1,0 +1,72 @@
+<!-- https://v.qq.com/x/page/l0786x6roz2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="cute.css">
+</head>
+<body>
+    <div class="box">
+        <div class="box2">
+                    <div class="weater"></div>
+                    <div class="weater2"></div>
+                    <div class="weater3"></div>
+                    <div class="mark"></div>
+                    <img src="img/cup.png" alt="">
+        </div>
+        <!-- <div id="show">增加液体</div> -->
+
+        <div class="parent">
+        <div class="menubox">
+            <div class="btnbox">
+                <div class="btn btn1" id="show1"></div>
+            </div>
+            <div class="btnbox">
+                <div class="btn active btn2" id="show2"></div>
+            </div>
+            <div class="btnbox">
+                <div class="btn btn3"></div>
+            </div>
+            <div class="btnbox">
+                <div class="btn btn4"></div>
+            </div>
+            <div class="btnbox">
+                <div class="btn btn5"></div>
+            </div>
+        </div>
+        </div>       
+    </div>
+    <script>
+       var btn=document.querySelectorAll('.menubox .btn');
+       var menubox=document.querySelector('.menubox');
+    //    声明默认值，去掉前一个点击元素的active
+       var now=1;
+       for(var i=0;i<btn.length;i++){
+           btn[i].index=i;
+           btn[i].onmouseover=function(){
+               this.classList.add('active');
+               btn[now].classList.remove('active');
+               now=this.index;
+               var deg=this.index*-30;
+               menubox.style.transform='rotate('+ deg +'deg)';
+           }
+       }
+
+       //juice
+       var mark=document.querySelector('.mark');
+        var weater2=document.querySelector('.weater2');
+        var weater3=document.querySelector('.weater3');
+       show1.onclick=function(){
+          weater2.classList.add('active2');
+          mark.classList.add('two');
+       }
+       show2.onclick=function(){
+          weater3.classList.add('active3');
+          mark.classList.add('three');
+       }
+    </script>
+</body>
+</html>

@@ -28,7 +28,9 @@ export default {
 </script>
 <style scoped>
 .learn span{
-  font-size: 12px
+  font-size: 1em;
+  display: inline-block;
+  margin-top: 90%;
 }
 .lea-con{
   margin: 0 auto;

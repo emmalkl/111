@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      .box{
+          /* box高度为0 */
+          width: 82px;
+          border:7px solid #cc3333;
+          /* 边框下没有作用，但占据7px */
+          border-bottom: 0;
+          border-top-width: 55px;
+          border-color:  #333 transparent transparent transparent;
+          border-radius: 0px 0px 60px 60px /15px;
+          position: relative;
+      }
+      .box img{
+          position: absolute;
+          top:-55px;
+          left: -7px;
+          width: 96px;
+      }
+      .round{
+           width: 100px;
+           height: 100px;
+           border:1px solid #cc3333;
+           border-radius: 10px 20px 60px 60px /15px;
+      }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="img/mark.png" alt="">
+    </div>
+    <div class="round"></div>
+</body>
+</html>

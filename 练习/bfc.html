@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .dv {
+        width: 400px;
+        height: 400px;
+        border: 1px solid slateblue;
+    }
+
+    .dv2 {
+        width: 200px;
+        height: 100px;
+        background: salmon;
+        margin-bottom: 30px;
+        overflow: auto;
+    }
+
+
+    .dv3 {
+        width: 200px;
+        height: 100px;
+        margin-top: 60px;
+        background: seagreen;
+        /* display: flow-root;//没用 */
+    }
+    .div4{
+        /* position: absolute; */
+        display: flow-root;
+    }
+    </style>
+</head>
+<body>
+    <div class="dv">
+        <div class="dv2"></div>      
+           <div class="div4">
+           <div class="dv3">
+             IE6、IE7中， // function foo(){ // console.log(a); // } // function bar(){ // var a =3 ;
+          </div>
+        </div> 
+  </div>
+</body>
+</html>

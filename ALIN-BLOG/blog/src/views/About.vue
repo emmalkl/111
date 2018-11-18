@@ -9,10 +9,10 @@
        <div class="item2-image pic-1" style="animation-delay: 2s;"><img src="../../public/img/graffiti-heart-shape.png" alt=""></div>
        <div class="item3-image pic-1" style="animation-delay: 3s;"><img src="../../public/img/instagram.png" alt=""></div>
        <div class="item4-image pic-1" style="animation-delay: 4s;"><img src="../../public/img/internet.png" alt=""></div>
-       <div class="item1-text pic-1" style="animation-delay: 1s;">Github</div>
-       <div class="item2-text pic-1" style="animation-delay: 2s;">Articles</div>
-       <div class="item3-text pic-1" style="animation-delay: 3s;">Instagram</div>
-       <div class="item4-text pic-1" style="animation-delay: 4s;">About me</div>
+       <div class="item1-text pic-1" style="animation-delay: 1s;"><a href="https://github.com/emmalkl">Github</a></div>
+       <div class="item2-text pic-1" style="animation-delay: 2s;"><a href="https://blog.csdn.net/qq_42779387">CSDN</a></div>
+       <div class="item3-text pic-1" style="animation-delay: 3s;"><a href="https://segmentfault.com/u/alin_lee">segmentfault</a></div>
+       <div class="item4-text pic-1" style="animation-delay: 4s;"><a @click="$router.push('/2')">About me</a></div>
        <div class="crab" id="pic-crab"><img src="../../public/img/crab.png" alt=""></div>
     </div>
     <div class="com">
@@ -32,9 +32,20 @@ export default {
 /* .about{
   display: table;
 } */
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+.pic-1 a:nth-child(odd){
+  color: aliceblue;
+}
+.pic-1 a:nth-child(even){
+  color: #000;
+}
 .about .content{
   width: 75%;
   height: 80%;
+  font-weight: 400;
   /* display: table-cell;
   vertical-align: middle; */
   border:2px solid #000;
@@ -74,16 +85,21 @@ export default {
 }
 .item1-image,.item2-image,.item3-image,.item4-image{
   position: absolute;
-  top:253px;
+  top:50%;
+  margin-top: -100px;
 }
 .item1-text,.item2-text,.item3-text,.item4-text{
   position: absolute;
-  top:332px; 
+  top:50%;
+  margin-top: -10px;
   font-size: 1.8vw!important;
   flex: 1;
 }
-.item1-text,.item3-text{
-  color: aliceblue;
+.item2-text a,.item4-text a{
+  color: #000!important;
+}
+.item3-text,.item4-text{
+  margin-left: -25px;
 }
 .item1-image,.item1-text{
   left: 8%;

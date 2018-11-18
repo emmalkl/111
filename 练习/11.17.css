@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+}
+.box{
+    /* vw浏览器可是宽度的1% */
+    width: 100vw; 
+    height: 100vh;
+    background: linear-gradient(to right top,#fff3f5,#ffcbd1);
+    /* 将menubox在父级中居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 圆 */
+.menubox{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #0b2e13;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top:80px;
+    transform: rotate(-30deg);
+    transition: 0.5s;
+}
+/* 扇形 */
+.btnbox{
+    width: 50px;
+    height: 175px;
+    /* background: #0c5460; */
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    top:-25px;
+    /* 绕圆心旋转 ,origin:x y;*/
+    transform-origin: center bottom;
+}
+.btnbox:nth-child(1){transform: rotate(0deg);}
+.btnbox:nth-child(2){transform: rotate(30deg);}
+.btnbox:nth-child(3){transform: rotate(60deg);}
+.btn{
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.btn.active{
+    transform: scale(1.2);
+}
+.parent{
+    width: 240px;
+    height: 160px;
+    border:1px solid #000;
+    position: relative;
+    overflow: hidden;
+}

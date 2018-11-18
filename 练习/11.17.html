@@ -1,0 +1,44 @@
+<!-- https://v.qq.com/x/page/l0786x6roz2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="11.17.css">
+</head>
+<body>
+    <div class="box">
+        <div class="parent">
+        <div class="menubox">
+            <div class="btnbox">
+                <div class="btn"></div>
+            </div>
+            <div class="btnbox">
+                <div class="btn active"></div>
+            </div>
+            <div class="btnbox">
+                <div class="btn"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script>
+       var btn=document.querySelectorAll('.menubox .btn');
+       var menubox=document.querySelector('.menubox');
+    //    声明默认值，去掉前一个点击元素的active
+       var now=1;
+       for(var i=0;i<btn.length;i++){
+           btn[i].index=i;
+           btn[i].onclick=function(){
+               this.classList.add('active');
+               btn[now].classList.remove('active');
+               now=this.index;
+               var deg=this.index*-30;
+               menubox.style.transform='rotate('+ deg +'deg)';
+           }
+       }
+    </script>
+</body>
+</html>

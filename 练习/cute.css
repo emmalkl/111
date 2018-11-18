@@ -1,0 +1,146 @@
+body{
+    margin: 0;
+}
+.box{
+    /* vw浏览器可是宽度的1% */
+    width: 100vw; 
+    height: 100vh;
+    background: linear-gradient(to right top,#fff3f5,#ffcbd1);
+    /* 将menubox在父级中居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 圆 */
+.menubox{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ffcbd1;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top:80px;
+    transform: rotate(-30deg);
+    transition: 2s;
+}
+/* 扇形 */
+.btnbox{
+    width: 50px;
+    height: 175px;
+    /* background: #0c5460; */
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    top:-25px;
+    /* 绕圆心旋转 ,origin:x y;*/
+    transform-origin: center bottom;
+}
+.btnbox:nth-child(1){transform: rotate(0deg);}
+.btnbox:nth-child(2){transform: rotate(30deg);}
+.btnbox:nth-child(3){transform: rotate(60deg);}
+.btnbox:nth-child(4){transform: rotate(90deg);}
+.btnbox:nth-child(5){transform: rotate(120deg);}
+.btnbox .btn1{background: url("img/grape.png") no-repeat; background-size: 100%;}
+.btnbox .btn2{background: url("img/lemon.png") no-repeat;background-size: 100%;}
+.btnbox .btn3{background: url("img/peach.png") no-repeat;background-size: 100%;}
+.btnbox .btn4{background: url("img/pineapple.png") no-repeat;background-size: 100%;}
+.btnbox .btn5{background: url("img/strawberry.png") no-repeat;background-size: 100%;}
+.btn{
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 2s;
+}
+.btn.active{
+    transform: scale(1.2);
+}
+.parent{
+    width: 240px;
+    height: 160px;
+    /* border:1px solid #000; */
+    position: relative;
+    overflow: hidden;
+    bottom: -200px;
+}
+
+
+
+/*juice*/
+.box2{
+    width: 220px;
+    height: 400px;
+    background-color: linear-gradient(to right top,#ffdfe3,#ffd3d8);
+    background:  url("img/xg.png") no-repeat;
+    background-size:220px 400px;
+    position: absolute;
+    top:50px;
+}
+.box2 img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+}
+.weater{
+     width: 129px;
+     border-width: 55px 7px 0;
+     border-style: solid;
+     border-color:  mediumpurple transparent transparent transparent;
+     border-radius: 0px 0px 60px 60px /20px;
+     position: absolute;
+     bottom: 4px;
+     left: 50%;
+     transform: translateX(-50%);
+}
+.weater2{
+     width: 144px;
+     border-width: 0px 7px 0;
+     border-style: solid;
+     border-color:  palevioletred transparent transparent transparent;
+     border-radius: 0px 0px 60px 60px /16px;
+     position: absolute;
+     bottom: 52px;
+     left: 50%;
+     transform: translateX(-50%);
+     transition: 1s;
+}
+.weater2.active2{
+   border-width: 35px 7px 0;
+}
+.weater3{
+    width: 144px;
+    border-width: 0px 7px 0;
+    border-style: solid;
+    border-color:  #b9e31c transparent transparent transparent;
+    border-radius: 0px 0px 60px 60px /16px;
+    position: absolute;
+    bottom: 73px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s;
+}
+.weater3.active3{
+    border-width: 75px 7px 0;
+}
+.mark{
+   background: url("img/mark.png") no-repeat;
+   background-size: 100%;
+   width: 150px;/*150*//*151*/
+   height: 11px;
+   position: absolute;
+   top:340px;/*340*//*311*/
+   left: 31px;/*31*//*34*/
+   transition: 1s;
+}
+.mark.two{
+    width: 151px;
+    top:311px;
+    left: 34px;
+}
+.mark.three{
+    width: 160px;
+    top:252px;
+    left: 29px;
+}

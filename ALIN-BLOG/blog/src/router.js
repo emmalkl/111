@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Introduction from './views/Introduction.vue'
 import Learn from './views/Learn.vue'
+import Thanks from './views/Thanks.vue'
 
 Vue.use(Router)
 
@@ -30,5 +31,10 @@ export default new Router({
       name: 'learn',
       component: Learn
     },
+    {
+      path: '/4',
+      name: 'thanks',
+      component: Thanks
+    }
   ]
 })

@@ -3,7 +3,7 @@
     <div class="content">
        <div class="con-img">
          <img src="../../public/img/bird.png" alt="" class="bird">
-         <img src="" alt="">
+         <img src="../../public/img/lin.jpg" alt="" class="self">
          <div class="con-line"></div>
        </div>
        <div class="con-que">
@@ -59,6 +59,11 @@ export default {
   bottom: 30px;
   left: 40px;
 }
+.self{
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
 .con-que,.con-text{
   width: 150px;
   height: 200px;
@@ -89,7 +94,7 @@ export default {
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-delay: 1s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards;/*停在最后一帧*/
   opacity: 0;
 }
 @keyframes text{
