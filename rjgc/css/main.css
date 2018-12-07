@@ -61,9 +61,11 @@
 }
 /*中间内容区域*/
 /*轮播图*/
-.nav .lunbo{
-    border: 1px solid #000;
+#box{
     height: 300px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 20;
 }
 /*内容专业介绍*/
 .nav .intro,.nav .expri,.nav .teacher,.nav .news{
@@ -93,21 +95,24 @@
 }       
 /*二级导航*/
 .top .navigation .list-zy{
+    z-index: 100;
     background-color:#3dbe5b;
     display: none;
 }
 .top .navigation .list-zy li{
+    z-index: 100;
     list-style: none;
     padding: 5px 5px;
     cursor: pointer;
 }
 /*选中的li变颜色*/
-.active{
+.active1{
     background-color:#3dbe5b;
     color:red;
 }
 /*控制二级导航显示隐藏*/
 .sel:hover .list-zy{
+    z-index: 100;
     display: block;
 }
 .list-zy>li:hover{

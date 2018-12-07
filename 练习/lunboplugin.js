@@ -19,7 +19,7 @@
        }
        //传入的options不为空合并参数
        if(options){
-           $.extend({},settings,options);
+           $.extend(settings,options);
        }
        //x
        if(settings.direction==="x"){
