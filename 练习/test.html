@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
         }
-       .ybox{
+       .xbox{
            height: 50px;
            width: 100px;
            margin: 20px auto;
@@ -19,12 +19,12 @@
             overflow: hidden;
        }
        ul{
-        width: 100px;
-        height: 300px;
+        width: 550px;
+        height: 50px;
        }
-       .ybox ul li{
-           /* float: left; */
-           margin-bottom: 5px;
+       .xbox ul li{
+           float: left;
+           margin-right: 5px;
            list-style: none;
            width: 100px;
            height: 50px;
@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-    <div class="ybox"> 
+    <div class="xbox"> 
         <ul>
             <li>1</li>
             <li>sdad</li>
@@ -47,7 +47,7 @@
     <script src="jquery-3.3.1.js"></script>
     <script src="lunboplugin.js"></script>
     <script>
-        $(".ybox").scroll({direction:"y"});
+        $(".xbox").scroll();
     </script>
     
     

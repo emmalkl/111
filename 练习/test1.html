@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     /* .box{
+         height: 20px;
+         width: 20px;
+         padding: 5px;
+         background: pink;
+     } */
+     .div2{
+         width: 20px;
+         height: 20px;
+         /* float: left; */
+         border:1px solid #000;
+         /* position: absolute;
+         left: 50%; */
+        
+     }
+     .div1{
+        border:1px solid #000;
+         width: 50px;
+         height: 50px;
+        /* position: relative; */
+        /* display: flex;
+        justify-content: center; */
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 50px;
+     }
+    </style>
+</head>
+<body>
+    <!-- <span class="box"></span>
+    <span>asd</span> -->
+
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+
+    <!-- <script>
+      let height=120;
+      function Person(){
+         this.height=180;
+      }
+    //   const instance1=Person();
+      const instance2=new Person();
+    //   console.log(instance1.height);
+      console.log(instance2.height);
+      console.log(window.height);
+    </script> -->
+
+    <!-- <script>
+    var arr = [0,2,4,6,8];
+// var str = arr.map(function(item,index,arr){
+//     console.log(this);
+//     console.log("原数组arr：",arr); //注意这里执行5次
+//     return item / 2;
+// },this);
+console.log(str);//0 1 2 3 4
+    var sum = 0;
+    var str = arr.forEach(function(item,index,arr){
+        sum += item;
+        console.log("sum的值为：",sum); //0 2 6 12 20 
+        console.log(arr);
+    })
+</script> -->
+
+<script>
+  var words=["one","two","three","four"];
+  words.forEach(function(word){
+      console.log(word);
+      if(word==="two"){
+          words.shift();
+      }
+  })
+</script>
+</body>
+</html>
