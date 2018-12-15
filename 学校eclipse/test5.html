@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav-top .nav-top-ul{
+    height: 50px;
+    background: #000;
+    line-height: 50px;
+    width: 100%;
+}
+.nav-top ul li a{
+    text-decoration: none;
+    color: white;
+}
+.nav-top ul li{
+    list-style: none;
+    float: left;
+    margin: 0 50px;
+}
+.nav-top ul li:nth-child(5){
+    margin-left: 660px;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    height: 50px;
+    color: aliceblue;
+    text-align: center;
+}
+.nav-left{
+    margin: 10px;
+    float: left;
+    height: 300px;
+    width: 200px;
+    /* background: #000; */
+    color:aliceblue;
+}
+.nav-left a{
+    color: #000;
+    text-decoration: none;
+}
+.nav-left li{
+    height: 30px;
+    text-align: center;
+}
+h1{
+    margin-left: 250px;
+}
+.nav-top-ul>li:hover{
+    background: green;
+}
+</style>
+</head>
+<body>
+<!-- 上导航  -->
+  <div class="nav-top">
+    <ul class="nav-top-ul">
+      <li><a  href="#">Home</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </div> <!—上导航结束  -->
+  <!— 主区域  -->
+  <div>
+      <!-- 左边侧栏  -->
+    <div class="nav-left">
+      <ul>
+        <li  style="background: #000;"><a href="#" style="color:green; ">云技术管理</a></li>
+        <li><a href="#">云服务器</a></li>
+        <li><a href="#">云数据库</a></li>
+        <li><a href="#">负载均衡</a></li>
+      </ul>
+      <ul>
+        <li style="background: #000;"><a href="#" style="color:green; ">安全管理</a></li>
+        <li><a href="#">云盾控制台</a></li>
+        <li><a href="#">DDoS高防IP</a></li>
+        <li><a href="#">Web应用防火墙</a></li>
+        <li><a href="#">CA证书服务</a></li>
+      </ul>
+    </div> <!-- 左边侧栏结束  -->
+     <!-- 主内容区域  -->
+    <div>
+      <h1>注册</h1>
+    </div> <!-- 主内容区域结束  -->
+  </div> <!-- 主区域结束  -->
+  <!-- footer  -->
+  <div class="footer">
+    东北林业大学<br /> 软件工程专业 2018&copy;
+  </div>
+</body>
+</html>

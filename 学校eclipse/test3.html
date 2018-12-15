@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="">
+<meta charset="UTF-8">
+<title>注册</title>
+</head>
+<body>
+  <div>
+  <h1>注册</h1>
+  <form action="" method="post">
+   <fieldset>
+    <legend>个人信息</legend>
+    <table>
+     <tr>
+      <th style="text-align: right"><label for="username">用户名</label></th>
+      <td><input id="username" type="text" required></td>
+     </tr>
+     <tr>
+      <th style="text-align: right"><label for="password">密码</label></th>
+      <td><input id="password" type="password" required></td>
+     </tr>
+     <tr>
+      <th style="text-align: right"><label for="gender">性别</label></th>
+      <td><input name="gender" type="radio">男 
+      		   <input name="gender" type="radio">女</td>
+     </tr>
+     <tr>
+      <th style="text-align: right"><label for="brithday">生日</label></th>
+      <td><input id="brithday" type="date" required></td>
+     </tr>
+     <tr>
+      <th style="text-align: right"><label for="province">籍贯</label></th>
+      <td><input list="province"> <datalist id="province">
+        <option>哈尔滨</option>
+        <option>沈阳</option>
+        <option>长春</option>
+       </datalist></td>
+     </tr>
+     <tr>
+      <th style="text-align: right"><label>学历</label></th>
+      <td><select>
+        <option>保密</option>
+        <option selected>学士</option>
+        <option>硕士</option>
+        <option>博士</option>
+      </select></td>
+     </tr>
+    </table>
+   </fieldset>
+   <br />
+   
+   <fieldset>
+    <legend>其他信息</legend>
+    <table>
+     <tr>
+      <th style="text-align: right"><label>喜欢的课程</label></th>
+      <td>
+       <ul>
+        <li><label><input type="checkbox"  checked>Web开发技术</label></li>
+        <li><label><input type="checkbox">Java程序设计</label></li>
+        <li><label><input type="checkbox">数据库原理</label></li>
+        <li><label><input type="checkbox">系统分析与测试</label></li>
+       </ul>
+      </td>
+     </tr>
+     <tr>
+      <th style="text-align: right"><label for="photo">照片</label></th>
+      <td><input id="photo" type="file" accept=".jpg, .png"></td>
+     </tr>
+    </table>
+   </fieldset>
+   <br />
+   <button type="submit">提交</button>
+   <button type="reset">重置</button>
+  </form>
+ </div>
+</body>
+</html>

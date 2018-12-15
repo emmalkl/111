@@ -1,0 +1,256 @@
+com.service.impl.UserServiceImpl
+package com.service.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
+import com.entity.User;
+import com.service.UserService;
+import com.util.DataSourceUtils;
+
+public class UserServiceImpl implements UserService {
+  private static Logger logger = Logger.getLogger(UserServiceImpl.class.getName());
+  @Override
+  public void addUser(String newName) {
+    // TODO Auto-generated method stub
+    String sql = "INSERT INTO user(name) VALUES(?)";
+    try(Connection conn = DataSourceUtils.getConnection();
+        PreparedStatement st = conn.prepareStatement(sql)) {
+        st.setString(1, newName);
+        st.executeUpdate();    
+    }catch (SQLException e) {
+      // TODO: handle exception
+      logger.warning(e.getMessage());
+    }
+  }
+
+  @Override
+  public List<User> listUsers() {
+    // TODO Auto-generated method stub
+    List<User> users = new ArrayList<>();
+    String sql = "SELECT * FROM User";
+    try(Connection conn = DataSourceUtils.getConnection();
+        PreparedStatement st = conn.prepareStatement(sql);
+        ResultSet rs = st.executeQuery()) {
+      while (rs.next()) {
+        User user = new User();
+        user.setId(rs.getInt("id"));
+        user.setName(rs.getString("name"));
+        users.add(user);
+      }  
+    } catch (SQLException e) {
+      // TODO: handle exception
+      logger.warning(e.getMessage());
+    }
+    return users;
+  }
+
+  @Override
+  public User getUser(int id) {
+    // TODO Auto-generated method stub
+    User user = null;
+    String sql = "SELECT * FROM user WHERE id=?";
+    try(Connection conn = DataSourceUtils.getConnection();
+        PreparedStatement st = conn.prepareStatement(sql)) {
+      st.setInt(1, id);
+      try(ResultSet rs = st.executeQuery()) {    
+        while (rs.next()) {
+          user = new User();
+          user.setId(rs.getInt("id"));
+          user.setName(rs.getString("name"));
+        }
+      }
+    } catch (SQLException e) {
+      // TODO: handle exception
+      logger.warning(e.getMessage());
+    }
+    return user;
+  }
+
+  @Override
+  public void updateUser(User user) {
+    // TODO Auto-generated method stub
+    String sql = "UPDATE user SET name=? WHERE id=?";
+    try(Connection conn = DataSourceUtils.getConnection();
+        PreparedStatement st = conn.prepareStatement(sql)) {
+        st.setString(1, user.getName());
+        st.setInt(2,user.getId());
+        st.executeUpdate();
+    }catch (SQLException e) {
+      // TODO: handle exception
+      logger.warning(e.getMessage());
+    }
+  }
+}
+
+/WEB-INF/jsp/index.jsp
+<%@ page pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<c:url value="/" var="b" />
+<base href="${b }">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <form action="AddUserServlet" method="post">
+    用户名：<input name="username"><br />
+    <button type="submit">添加</button>
+  </form>
+  
+  <form action="UpdateUserServlet" method="post">
+    <select name="uid">
+      <c:forEach items="${users }" var="u">
+        <option value="${u.id }">${u.name }</option>
+      </c:forEach>
+    </select>
+    新用户名：<input name="username" required><br />
+    <button type="submit">更新</button>
+  </form>
+  列表<br />
+  <ul>
+    <c:forEach items="${users }" var="u">
+      <li><a href="GetUserServlet?uid=${u.id }">${u.name }</a></li>
+    </c:forEach>
+  </ul>
+</body>
+</html>
+
+/WEB-INF/jsp/detail.jsp
+<%@ page pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  用户ID：${user.id } <br />
+  用户名：${user.name }
+</body>
+</html>
+
+com.controller.ListUsersServlet
+package com.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.service.ServiceFactory;
+import com.service.UserService;
+@WebServlet("/ListUsersServlet")
+public class ListUsersServlet extends HttpServlet{
+  // 基于ServiceFactory工厂，获取单例的UserService组件
+  private UserService userService = ServiceFactory.getUserService();
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    // TODO Auto-generated method stub
+    // 实现加载全部用户，并转发至/WEB-INF/jsp/index.jsp
+    req.setAttribute("users", userService.listUsers());
+    req.getRequestDispatcher("/WEB-INF/jsp/index.jsp")
+    .forward(req, resp);
+  }
+  private static final long serialVersionUID = 1L;
+
+}
+
+com.controller.AddUsersServlet
+package com.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.service.ServiceFactory;
+import com.service.UserService;
+
+@WebServlet("/AddUserServlet")
+public class AddUserServlet extends HttpServlet {
+  // 基于ServiceFactory工厂，获取单例的UserService组件
+  private UserService userService = ServiceFactory.getUserService();
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // TODO Auto-generated method stub
+    // 获取请求参数，调用userService组件完成持久化操作，重定向到ListUserServlet
+    String name = request.getParameter("username");
+    userService.addUser(name);
+    response.sendRedirect(request.getContextPath() + "/ListUsersServlet");
+  }
+  private static final long serialVersionUID = 1L;
+}
+
+com.controller.UpdateUsersServlet
+package com.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.entity.User;
+import com.service.ServiceFactory;
+import com.service.UserService;
+
+@WebServlet("/UpdateUserServlet")
+public class UpdateUserServlet extends HttpServlet {
+  // 基于ServiceFactory工厂，获取单例的UserService组件
+  private UserService userService = ServiceFactory.getUserService();
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // TODO Auto-generated method stub
+    // 
+    int id = Integer.valueOf(request.getParameter("uid"));
+    String newName = request.getParameter("username");
+    User user = new User(id, newName);
+    userService.updateUser(user);
+    response.sendRedirect(request.getContextPath() + "/ListUsersServlet");
+  }
+  private static final long serialVersionUID = 1L;
+}
+
+com.controller.GetUsersServlet
+package com.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.service.ServiceFactory;
+import com.service.UserService;
+
+
+@WebServlet("/GetUserServlet")
+public class GetUserServlet extends HttpServlet {
+  // 基于ServiceFactory工厂，获取单例的UserService组件
+  private UserService userService = ServiceFactory.getUserService();
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // TODO Auto-generated method stub
+    // 获取指定ID用户的详细信息
+    int id = Integer.valueOf(request.getParameter("uid"));
+    request.setAttribute("user", userService.getUser(id));
+    request.getRequestDispatcher("/WEB-INF/jsp/detail.jsp")
+    .forward(request, response);
+  }
+  private static final long serialVersionUID = 1L;
+}
