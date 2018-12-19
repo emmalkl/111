@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     html{
+         height: 100%;
+     }
+     body{
+         height: 100%;
+         margin:0;
+     }
+     ul{
+         padding: 0;
+         margin: 0;
+
+     }
+     .wrap{
+         width: 100%;
+         height: 100%;
+         background-color: #9933ff;
+         background: linear-gradient(135deg,pink 20%,hotpink 80%);
+         background-position: 0 -100vh;
+         background-repeat: no-repeat;
+         transition: 1s;
+         overflow: hidden;
+         position: relative;
+     }
+     .wrap:hover{
+        background-position: 0 0;
+     }
+     .menu{
+         padding-top: 150px;
+         transition: 1s;
+         width: 100%;
+         height: 100%;
+         box-sizing: border-box;
+         position: absolute;
+         top: 0;
+         left: 0;
+     }
+     .menulist{
+         width: 40%
+     }
+     .menulist li{
+        height: 45px;
+        line-height: 45px;
+        color: white;
+        text-indent: 20px;
+        border-radius: 0 20px 20px 0/50% ;
+     }
+     .active{
+         background-color: pink;
+     }
+     /* .wrap:hover .menu{
+         transform: scale(1.2);
+     } */
+     .content{
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         background: white;
+         transform-origin:  right center;
+         transition: 1s;
+     }
+     .content:hover{
+        transform: scale(0.5);
+     }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+       <section class="menu">
+           <ul class="menulist">
+               <li class="active">lilin</li>
+               <li>alin</li>
+               <li>lin</li>
+               <li>li</li>
+           </ul>
+       </section>
+       <section class="content">
+        <button></button>
+       </section>
+    </section>
+</body>
+</html>
