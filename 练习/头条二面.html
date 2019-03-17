@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  说一下盒模型 区别 以及切换方式
+
+  说一下行元素块元素以及行块级元素的区别
+
+  清除浮动的方式都有哪些？
+
+  说一下 forEach 和 map的区别（自行百度）
+  介绍一下 js的reduce() 方法
+
+  HTTP请求行、请求头、请求体
+  HTTP都有哪些请求头分别都是干什么用的
+  哪些http请求头控制缓存的
+  强缓存、协商缓存 
+
+  js提供的数组方法都有哪些（比如 push pop join等等都看一下）他们的返回值都是啥？
+
+
+  如何判断一段信息流中的广告被查看看（提示：getBoundingClientRect()看一下）
+
+  如何判断一个对象是否为空对象（百度一下好多 es6的object.key()方法了解一下）
+
+  判断数据类型的方法 （typeof  instancefo constructor  toString.call()都看一下）
+
+  是否了解react （稍微了解下因为他们公司用的react 你说你简单了解过就可以没实战过）
+  说出一些react 和 vue 的区别（自行百度）
+
+  如何通过使用vuex进行组件间传值 具体方法如何操作 （自己看一下代码）
+
+
+
+  Vue 如何组件间传值
+  Vue 封装一个水平垂直居中的组件（先说如何使一个元素水平垂直居中然后再说把他封装成组件 通过props传去一个状态值来控制组件的显示隐藏还有组件内部需要封装一些方法比如关闭啥的方法）
+
+  <script>
+    // 第一题
+    // 把下面对象去重最后输出 a,b
+    //这里可以考虑一下不适用 indexOF的方法去重因为好多同学都用过了可以换一个试试
+    var user=[
+      {id:1,name:'a'},
+      {id:2,name:'b'},
+      {id:3,name:'a'},
+      {id:4,name:'b'}
+    ]
+    Array.prototype.unique = function(){
+      let temp = [];
+      for(var i=0;i<this.length;i++){
+        if(temp.indexOf(this[i].name) == -1){
+              temp.push(this[i].name)
+          }
+      }
+      return temp;
+    }
+    var res = user.unique();
+    console.log(res);
+
+    // 第二题
+    // 说出输出什么，为什么输出这些
+    let height = 120;
+    function Person(){
+      this.height = 180;
+    }
+    const instance1 = Person();
+    const instance2 = new Person();
+    console.log(instance1.height); 
+    console.log(instance2.height); 
+    console.log(window.height);
+    
+    
+  </script>
+</body>
+</html>
