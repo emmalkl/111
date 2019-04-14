@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         .second{
                width: 400px;
                padding: 10px;
@@ -21,7 +25,8 @@
            .s1{
                /* position: absolute; */
                /* float: right; */
-               overflow: hidden;
+               overflow: hidden; /* 给兄弟元素让出左边的宽度 */
+               /* float: left; */
                background: slategray;
        
            }
