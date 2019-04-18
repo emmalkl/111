@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+
+    }
+    .div1{
+        height: 300px;
+        width: 500px;
+        margin: auto auto;
+        border: 1px solid #000000;
+        display: none;
+    }
+    .div1.active{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <button class="btn1">click</button>
+    <div class="div1">
+        <p>hello</p>
+        <p>this is a modal</p>
+        <button>取消</button><button>确定</button>
+    </div>
+    <script>
+     var obt=document.getElementsByClassName("btn1");
+     var odiv=document.getElementsByClassName("div1");
+     obt.onclick=function(){
+         console.log(1)
+         odiv.classList.add('active');
+     }
+    </script>
+</body>
+</html>
