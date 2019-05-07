@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function expert(what) {
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            console.log(what);
+            resolve();
+        },2000)
+    })
+    }
+    function add(){
+        var arr=['pd404','土创202','以团101','土偶(青你)202'];
+        var really=arr.join('+');
+        console.log(really);
+        return really;
+    }
+    async function fn(){
+        await expert('5月3号pd404开播');
+        var then=add();
+        if(then){
+            console.log('400个里我能挑200个');
+            console.log('单纯盲吹一波鹅厂创202');
+        }
+    }
+    fn()
+    </script>
+</body>
+</html>
