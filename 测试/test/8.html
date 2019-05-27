@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     .div1{
+         width: 100px;
+         height: 100px;
+         display: inline-block;
+         background: palegreen;
+     }
+     .div2{
+         width: 50px;
+         height: 50px;
+         display: inline-block;
+         background: palevioletred;
+     }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2">
+
+        </div>
+    </div>
+    <script>
+          var odiv1=document.getElementsByClassName("div1")[0];
+          var odiv2=document.getElementsByClassName("div2")[0];
+        //   console.log(odiv1);
+          odiv1.onclick=function(){
+            console.log(1);
+          }
+          odiv2.onclick=function(){
+              console.log(2);
+          }
+          //点击内部的会输出2  1  原因：在冒泡阶段也会触发外层元素的click事件
+    </script>
+</body>
+</html>
